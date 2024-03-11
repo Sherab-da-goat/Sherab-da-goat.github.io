@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+kumquat-guitar-ebwz.squarespace.com	TRUE	/	FALSE	1999999999	crumb	BTFSctlLK6BDNTA3MThmZDMxZjA3MWI5ZmVhZDNlZjU4NTdkNTYz
+
