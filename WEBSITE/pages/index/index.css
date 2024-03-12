@@ -1,5 +1,6 @@
 /* Template.css */
-@import url(https://fonts.googleapis.com/css?family=Passion+One);
+
+
 body {
     background: url('/RESOURCES/DSCN0392_Original.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -12,7 +13,19 @@ body {
     transition: background-size 0.4s ease;
   }
 
-  
+  div.cursors div{
+    position: absolute;
+    top: 300px;
+    left: 300px;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 10000;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    opacity: 60%;
+  }
   
   header {
     height: 178px;
