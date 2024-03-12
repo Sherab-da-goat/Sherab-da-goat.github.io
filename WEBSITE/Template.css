@@ -1,7 +1,9 @@
-/* Template.css */
+/* again make it an actual tempoalte */
+
+
 
 body {
-  background: url('') no-repeat center center fixed;
+  background: url('/RESOURCES/DSCN0392_Original.jpg') no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   margin: 0;
@@ -9,7 +11,29 @@ body {
   font-weight: 100;
   min-height: 100vh;
   position: relative;
-  
+  transition: background-size 0.4s ease;
+  color: white;
+  padding-bottom: 500px;
+}
+
+main h1{
+color: #ff0000;
+font-size: 85px;
+}
+
+
+div.cursors div{
+  position: absolute;
+  top: 300px;
+  left: 300px;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 10000;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 60%;
 }
 
 header {
@@ -137,3 +161,73 @@ footer {
   font-weight: 700;
   font-style: normal;
 }
+
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #ff0000;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(192, 0, 0, 0.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.btn-5 {
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: rgb(0, 0, 0);
+background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+}
+.btn-5:hover {
+  color: #ff0048;
+  background: transparent;
+   box-shadow:none;
+}
+.btn-5:before,
+.btn-5:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #8a072c;
+  box-shadow:
+   -1px -1px 5px 0px #360000,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-5:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-5:hover:before,
+.btn-5:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+Roc Grotesk ExtraWide{
+font-family: "roc-grotesk-extrawide", sans-serif;
+font-weight: 400;
+font-style: normal;}
+
+Roc Grotesk ExtraWide ExtraBold{
+font-family: "roc-grotesk-extrawide", sans-serif;
+font-weight: 700;
+font-style: normal;}
