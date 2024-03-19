@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
 
@@ -170,7 +172,7 @@ code {
 }
 
 .projects {
-  position: relative;
+  position:relative;
   margin: 0;
   padding-left: 0;
   list-style: none;
@@ -181,9 +183,9 @@ code {
 
 .projectsLi {
   cursor: pointer;
-  /*-webkit-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    transform: rotate3d(0, 1, 0, var(--rotateY)) translateZ(0);*/
+    transform: rotate3d(0, 1, 0, var(--rotateY)) translateZ(0);
   transform-style: preserve-3d;
 }
 
@@ -239,7 +241,7 @@ code {
   color: #ff0000;
   text-decoration: none;
   text-transform: uppercase;
-  @include drukWideSuper;
+ 
   font-size: 7vw;
   font-weight: 900;
   letter-spacing: 0.02em;
