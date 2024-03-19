@@ -6,7 +6,7 @@ font-weight: 700;
 font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: red;
+  background-color: white;
 }
 
 Roc Grotesk ExtraWide{
@@ -60,7 +60,7 @@ code {
     width: 49px;
     padding: 40px;
     font-family: "roc-grotesk-extrawide", sans-serif;
-    font-size: 36px;
+    font-size: 30wpx;
     line-height: 30px;
     -webkit-text-stroke: 2px #ff0000;
     text-stroke: 2px #ff0000;
@@ -70,7 +70,7 @@ code {
 
 .logo a{
     text-decoration: none;
-    color: black  ;
+    color: red  ;
 }
 
 
@@ -233,11 +233,11 @@ code {
 .projects a {
     scale: 1;
     position: relative;
-    color: #000;
+    color: #ff0000;
     text-decoration: none;
     text-transform: uppercase;
     @include drukWideSuper;
-    font-size: 9.6vw;
+    font-size: 7vw;
     font-weight: 900;
     letter-spacing: 0.02em;
     line-height: 0.9em;
@@ -248,9 +248,9 @@ code {
 
     transition: color 0.5s, opacity 0.5s;
 
-    @supports ((-webkit-text-stroke: 3px #000) or (text-stroke: 3px #000)) {
-        -webkit-text-stroke: 3px #000;
-        text-stroke: 3px #000;
+    @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
+        -webkit-text-stroke: 3px #ff0000;
+        text-stroke: 3px #ff0000;
     }
 }
 
@@ -266,11 +266,11 @@ code {
     font-weight: 500;
     letter-spacing: 0;
     line-height: 1em;
-    color: #000 !important;
+    color: #ff0000 !important;
     pointer-events: none;
     transition: none;
 
-    @supports ((-webkit-text-stroke: 3px #000) or (text-stroke: 3px #000)) {
+    @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
         -webkit-text-stroke: transparent;
         text-stroke: transparent;
     }
@@ -283,7 +283,7 @@ code {
     left: -0.3em;
     width: 2px;
     height: 0.85em;
-    background-color: #000;
+    background-color: #ff0000;
     transform: rotateZ(25deg);
     pointer-events: none;
 }
@@ -294,7 +294,7 @@ code {
 
         font-size: 7.4vw;
 
-        @supports ((-webkit-text-stroke: 2px #000) or (text-stroke: 2px #000)) {
+        @supports ((-webkit-text-stroke: 2px #ff0000) or (text-stroke: 2px #ff0000)) {
             -webkit-text-stroke-width: 2px;
             text-stroke-width: 2px;
         }
