@@ -1,5 +1,12 @@
 
-
+  
+#container3D canvas {
+  width: 100vw !important;
+  height: 100vh !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 body {
   margin: 0;
 
@@ -8,7 +15,7 @@ body {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  background-color: transparent;
 }
 
 Roc Grotesk ExtraWide {
@@ -264,7 +271,7 @@ code {
 .projects a:before {
   content: attr(data-info);
   white-space: pre;
-  position: absolute;
+  position: relative;
   top: 3.7em;
   left: -250px;
   width: 200px;
@@ -285,7 +292,7 @@ code {
 /*this is da backslashes*/
 .projects a:after {
   content: "";
-  position: absolute;
+  position: relative;
   top: 0.23em;
   left: -0.3em;
   width: 2px;
