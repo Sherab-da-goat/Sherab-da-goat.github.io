@@ -7,8 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
-    />
+      content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="/logo192.png" />
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="https://use.typekit.net/gxo5elj.css" />
@@ -20,18 +19,19 @@
       window.hasMobileFirstExtension = true;
     </script>
 
-  <script src="three.min.js"></script>
- 
-  
-  <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@v0.153.0/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@v0.153.0/examples/jsm/"
+    <script src="three.min.js"></script>
+
+    <script
+      async
+      src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@v0.153.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@v0.153.0/examples/jsm/"
+        }
       }
-    }
-  </script>
+    </script>
   </head>
 
   <body>
@@ -52,9 +52,9 @@
         </div>
       </div>
       <div class="projects-main">
+        
         <div
-          class="stagePerspective parallaxPerspective perspective-origin-tt-bb"
-        >
+          class="stagePerspective parallaxPerspective perspective-origin-tt-bb">
           <div class="stageContainer" style="opacity: 1; height: autopx">
             <main class="stage" style="transform: translate3d(0px, 0px, 0px)">
               <ul class="projects isHovering">
@@ -63,8 +63,8 @@
                     <a
                       href="/WEBSITE/pages/residents/Residents.html"
                       data-barba="HomeTransition"
-                      >Residents</a>
-                      
+                      >Residents</a
+                    >
                   </div>
                 </li>
                 <li class="projectsLi" data-barba="HomeTransition">
@@ -72,15 +72,18 @@
                     <a
                       href="/WEBSITE/pages/events/Events.html"
                       data-barba="HomeTransition"
-                      >Events</a>
+                      >Events</a
+                    >
                   </div>
+                  
                 </li>
                 <li class="projectsLi" data-barba="HomeTransition">
                   <div class="projectContainer">
                     <a
                       href="/WEBSITE/pages/gallery/Gallery.html"
                       data-barba="HomeTransition"
-                      >Gallery</a>
+                      >Gallery</a
+                    >
                   </div>
                 </li>
                 <li class="projectsLi" data-barba="HomeTransition">
@@ -88,7 +91,8 @@
                     <a
                       href="/WEBSITE/pages/tickets/Tickets.html"
                       data-barba="HomeTransition"
-                      >Tickets</a>
+                      >Tickets</a
+                    >
                   </div>
                 </li>
 
@@ -98,29 +102,35 @@
                       target="”_blank”"
                       href="https://www.instagram.com/code.__red/"
                       data-barba="HomeTransition"
-                      >Instagram</a>
+                      >Instagram</a
+                    >
                   </div>
                 </li>
                 <li class="projectsLi" data-barba="HomeTransition"></li>
               </ul>
             </main>
           </div>
+          <div id="progress-container">
+            <div id="progress"></div>
+          </div>
+          <div id="container3d" >
+          <script type="module" src="./main.js"></script>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+    <div id="root">
+      <div class="app">
+        <div class="header">
+          <div class="logo">
+            <a href="/WEBSITE/pages/index/Index.html">CODE RED</a>
+          </div>
         </div>
       </div>
     </div>
-  <div id="root">
-    <div class="app">
-      <div class="header">
-        <div class="logo">
-          <a href="/WEBSITE/pages/index/Index.html">CODE RED</a>
-        </div>
-    </div>
-  </div>
-
-</div>
-
-<main>
-  <div id="container3D"></div>
-</main>
-</body>
+    
+    
+  </body>
 </html>

@@ -9,7 +9,7 @@
 }
 body {
   margin: 0;
-
+position: relative;
   font-family: "roc-grotesk-extrawide", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -180,7 +180,8 @@ code {
 
 .projects {
   position:relative;
-  margin: 0;
+  margin:0;
+  margin-top: 100px;
   padding-left: 0;
   list-style: none;
   text-align: right;
