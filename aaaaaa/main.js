@@ -2,11 +2,11 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x000000);
+renderer.setClearColor( 0xffffff, 0);
 renderer.setPixelRatio(window.devicePixelRatio);
 
 renderer.shadowMap.enabled = true;
@@ -16,38 +16,55 @@ document.body.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-camera.position.set(4, 5, 11);
+// There's no reason to set the aspect here because we're going
+// to set it every frame anyway so we'll set it to 2 since 2
+// is the the aspect for the canvas default size (300w/150h = 2)
+const camera = new THREE.PerspectiveCamera(70, 2, 1, 1000);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.enablePan = false;
-controls.minDistance = 5;
-controls.maxDistance = 20;
+controls.minDistance = 10;
+controls.maxDistance = 10;
 controls.minPolarAngle = 0.5;
 controls.maxPolarAngle = 1.5;
 controls.autoRotate = false;
-controls.target = new THREE.Vector3(0, 1, 0);
+controls.target = new THREE.Vector3(0,1, 0);
 controls.update();
 
-const groundGeometry = new THREE.PlaneGeometry(20, 20, 32, 32);
-groundGeometry.rotateX(-Math.PI / 2);
-const groundMaterial = new THREE.MeshStandardMaterial({
-  color: 0x555555,
-  side: THREE.DoubleSide
-});
-const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
-groundMesh.castShadow = false;
-groundMesh.receiveShadow = true;
-scene.add(groundMesh);
+function resizeCanvasToDisplaySize() {
+  const canvas = renderer.domElement;
+  // look up the size the canvas is being displayed
+  const width = canvas.clientWidth;
+  const height = canvas.clientHeight;
 
-const spotLight = new THREE.SpotLight(0xffffff,  3, 100, 0.22, 1);
-spotLight.position.set(0, 25, 0);
-spotLight.castShadow = true;
-spotLight.shadow.bias = -0.0001;
-scene.add(spotLight);
+  // adjust displayBuffer size to match
+  if (canvas.width !== width || canvas.height !== height) {
+    // you must pass false here or three.js sadly fights the browser
+    renderer.setSize(width, height, false);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
 
-const loader = new GLTFLoader().setPath('3d/devil/');
+    // update any render target sizes here
+  }
+}
+
+
+
+
+var light = new THREE.PointLight(0xffffff);
+light.position.set(-100,300,100);
+scene.add(light);
+
+//Add lights to the scene, so we can actually see the 3D model
+const topLight = new THREE.DirectionalLight(0xffffff, 17); // (color, intensity)
+topLight.position.set(500, 300, 500) //top-left-ish
+topLight.castShadow = true;
+scene.add(topLight);
+
+
+
+const loader = new GLTFLoader().setPath('3d/devil_vTWO/');
 loader.load('scene.gltf', (gltf) => {
   const mesh = gltf.scene;
 
@@ -58,7 +75,7 @@ loader.load('scene.gltf', (gltf) => {
     }
   });
 
-  mesh.position.set(0, 1.05, -1);
+  mesh.position.set(3, 0, -1.5);
   scene.add(mesh);
 
   document.getElementById('progress-container').style.display = 'none';
@@ -71,6 +88,7 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
+
 
 
 function animate() {
