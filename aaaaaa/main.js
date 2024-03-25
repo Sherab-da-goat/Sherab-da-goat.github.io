@@ -14,7 +14,7 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 document.body.appendChild(renderer.domElement);
 
-const scene = new THREE.Scene();
+const geometry = new THREE.BoxGeometry(200, 200, 200);
 
 // There's no reason to set the aspect here because we're going
 // to set it every frame anyway so we'll set it to 2 since 2
@@ -90,10 +90,22 @@ window.addEventListener('resize', () => {
 });
 
 
-
 function animate() {
   requestAnimationFrame(animate);
   controls.update();
+  function animate(time) {
+    time *= 0.001;  // seconds
+  
+    resizeCanvasToDisplaySize();
+  
+    mesh.rotation.x = time * 0.5;
+    mesh.rotation.y = time * 1;
+  
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+  }
+  
+  requestAnimationFrame(animate);
   renderer.render(scene, camera);
 }
 

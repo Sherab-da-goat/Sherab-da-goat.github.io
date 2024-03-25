@@ -22,37 +22,37 @@ export default function Projects() {
             </li>
             <li className="projectsLi" data-barba="HomeTransition">
               <div className="projectContainer">
-                <a href="/work/thebrigade/" data-barba="HomeTransition">The<br />Brigade</a>
+                <a href="/work/thebrigade/" data-barba="HomeTransition"></a>
               </div>
             </li>
             <li className="projectsLi" data-barba="HomeTransition">
               <div className="projectContainer">
-                <a href="/work/push/" data-barba="HomeTransition">Push</a>
+                <a href="/work/push/" data-barba="HomeTransition"></a>
               </div>
             </li>
             <li className="projectsLi" data-barba="HomeTransition">
               <div className="projectContainer">
-                <a href="/work/onxmaps/" data-barba="HomeTransition">onX Maps</a>
+                <a href="/work/onxmaps/" data-barba="HomeTransition"></a>
               </div>
             </li>
             <li className="projectsLi" data-barba="HomeTransition">
               <div className="projectContainer">
-                <a href="/work/iconmotosports/"  data-barba="HomeTransition">Icon Moto-<br />Sports</a>
+                <a href="/work/iconmotosports/"  data-barba="HomeTransition">-<br /></a>
               </div>
             </li>
             <li className="projectsLi" data-barba="HomeTransition">
               <div className="projectContainer">
-                <a href="/work/parliament/" data-barba="HomeTransition">Parlia-<br />ment</a>
+                <a href="/work/parliament/" data-barba="HomeTransition"><br /></a>
               </div>
             </li>
             <li className="projectsLi" data-barba="HomeTransition">
               <div className="projectContainer">
-                <a href="/work/haydenshapes/" data-barba="HomeTransition">Hayden-<br />shapes</a>
+                <a href="/work/haydenshapes/" data-barba="HomeTransition"><br /></a>
               </div>
             </li>
             <li className="projectsLi" data-barba="HomeTransition">
               <div className="projectContainer">
-                <a href="/work/zervice/" data-barba="HomeTransition">Zervice</a>
+                <a href="/work/zervice/" data-barba="HomeTransition"></a>
               </div>
             </li>
           </ul>

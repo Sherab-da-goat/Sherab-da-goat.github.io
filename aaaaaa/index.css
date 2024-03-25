@@ -1,13 +1,11 @@
 
   
 #container3D canvas {
-  width: 100vw !important;
-  height: 100vh !important;
-  position: absolute;
-  top: 0;
+ 
+  position: fixed;
   left: 0;
-  background-color: transparent;
-  float: left;
+  top: 0;
+  z-index:-1;
 }
 body {
   margin: 0;
