@@ -181,6 +181,8 @@ code {
 .projects {
   position:relative;
   margin:0;
+  margin-top: 75px;
+  padding-left: 0;
   list-style: none;
   text-align: right;
   width: 95%;
