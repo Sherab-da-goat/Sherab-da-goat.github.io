@@ -327,7 +327,7 @@ code {
   .projects a:before {
     top: 10px;
     left: -220px;
-    font-size: 7px;
+    font-size: 2px;
   }
 
   .projects a:after {
