@@ -73,7 +73,7 @@ code {
   font-family: "roc-grotesk-extrawide", sans-serif;
   font-size: 30wpx;
   line-height: 30px;
-  -webkit-text-stroke: 2px #ffffff00;
+  -webkit-text-stroke: 2px #ff000000;
 
   color: red;
   transition-duration: 1s;
@@ -102,12 +102,12 @@ code {
 .info {
   display: flex;
   flex-direction: row;
-  color: #fff;
+  color: red;
 }
 
 .info ul li {
   font-size: 13px;
-  color: #fff;
+  color: red;
 }
 
 .nav-links {
@@ -118,7 +118,7 @@ code {
 
 .about-li ul {
   margin-left: 10px;
-  color: #fff;
+  color: red;
 }
 
 .nav-links ul li span {
@@ -181,7 +181,6 @@ code {
 .projects {
   position:relative;
   margin:0;
-  margin-top: 75px;
   padding-left: 0;
   list-style: none;
   text-align: right;
@@ -239,7 +238,7 @@ code {
   transition-duration: 0.3s;
 
   @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
-    color: transparent;
+    color: #000000;
   }
 }
 
@@ -281,7 +280,7 @@ code {
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1em;
-  color: #ff0000 !important;
+  color: #FFFFFF !important;
   pointer-events: none;
   transition: none;
 
