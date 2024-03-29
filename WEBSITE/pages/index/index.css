@@ -197,20 +197,16 @@ code {
 }
 
 .projectContainer {
-  transform: rotate3d(0, 0, 0, 0deg) translateZ(0) scale(1, 1);
   transform-origin: center center;
   transform-style:preserve-3d;
   will-change: transform;
 
-  @media screen and (min-width: 768px) {
-    transition: transform 1.5s cubic-bezier(.2, 0.82, 0.165, 1);
-  }
 }
 
 &:not(.intro) .projectsLi:hover .projectContainer,
 &:not(.intro) .projectsLi.isHovered .projectContainer {
-  transform: rotate3d(0, 1, 0, -35deg) translateZ(0) scale(1.2, 1);
-  transition-duration: 1s;
+  transform: rotate3d(0, 0, 0, 0deg) translateZ(0) scale(1.1, 1);
+  transition-duration: .5s;
 }
 
 .projectsLi.isSelected .projectContainer,
@@ -343,3 +339,116 @@ code {
   }
 
 
+
+/*stuff to inspect*/
+
+
+
+
+  &:not(.isMobile).intro {
+    pointer-events: none;
+  }
+  
+  &.intro .stage {
+    transform: translate3d(0, -110%, 0);
+    animation: introStage 2s forwards;
+  }
+  
+  &:not(.isMobile).intro .stage {
+    position: absolute;
+  }
+  
+  @for $i from 1 through 8 {
+    &.intro .projectsLi:nth-child(#{$i}) .projectContainer {
+      animation-delay: 1s - ($i / 10);
+    }
+  }
+  
+  @keyframes introStage {
+    0% {
+      transform: translate3d(0, -110%, 0);
+    }
+  
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes introProjectContainer {
+    0% {
+      visibility: visible;
+      opacity: 0;
+      transform: rotate3d(0, 1, 0, -100deg) translateZ(0) scale(1);
+    }
+  
+    100% {
+      visibility: visible;
+      opacity: 1;
+      transform: rotate3d(0, 1, 0, -45deg) translateZ(0) scale(1);
+    }
+  }
+  
+  &.outro {
+    &:not(.isMobile) {
+      pointer-events: none;
+    }
+  
+    .stageContainer {
+      transform: translate3d(0, 0, 0);
+      animation: outro 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 1.15s forwards;
+    }
+  
+    .projectContainer {
+      transition:
+        transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+        opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  
+    .projectsLi:not(.isSelected) .projectContainer {
+      transform: rotate3d(0, 1, 0, -114deg) translateZ(0) scale(1);
+      opacity: 0;
+      transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      transition-duration: 0.25s;
+    }
+  
+    @for $i from 1 through 9 {
+      .projectsLi:not(.isSelected):nth-child(#{$i}) .projectContainer {
+        transition-delay: 1s - ($i / 10);
+      }
+    }
+  
+    .projectsLi.isSelected .projectContainer,
+    .projectsLi.isSelected:hover .projectContainer {
+      transform: rotate3d(0, 1, 0, 0deg) translateZ(0) scale(0.7);
+      opacity: 0;
+      transition-duration: 0.5s;
+      transition-delay: 1s;
+    }
+  
+    .projectsLi.isSelected .projectContainer a {
+      transition-delay: 1.15s;
+    }
+  
+    .projectsLi.isSelected .projectContainer a {
+      &:before,
+      &:after {
+        opacity: 0;
+        transition: opacity 0.2s ease-out 0.15s;
+      }
+    }
+  
+    @keyframes outro {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+  
+      100% {
+        transform: translate3d(0, -25vh, 0);
+      }
+    }
+  }
+  
+  .parallaxPerspective {
+    perspective-origin: 50% var(--perspective-origin-y);
+    will-change: perspective-origin;
+  }
