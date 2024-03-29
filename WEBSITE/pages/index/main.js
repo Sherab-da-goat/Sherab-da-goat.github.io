@@ -6,15 +6,15 @@ var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(0x000000);
 renderer.setClearColor( 0xffffff, 0);
 renderer.setPixelRatio(window.devicePixelRatio);
 
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-
 document.body.appendChild(renderer.domElement);
 
-const geometry = new THREE.BoxGeometry(200, 200, 200);
+const scene = new THREE.Scene();
 
 // There's no reason to set the aspect here because we're going
 // to set it every frame anyway so we'll set it to 2 since 2
@@ -29,7 +29,7 @@ controls.maxDistance = 10;
 controls.minPolarAngle = 0.5;
 controls.maxPolarAngle = 1.5;
 controls.autoRotate = false;
-controls.target = new THREE.Vector3(0,1, 0);
+controls.target = new THREE.Vector3(0, 1, 0);
 controls.update();
 
 function resizeCanvasToDisplaySize() {
@@ -74,7 +74,8 @@ loader.load('scene.gltf', (gltf) => {
       child.receiveShadow = true;
     }
   });
-
+ 
+  
   mesh.position.set(3, 0, -1.5);
   scene.add(mesh);
 
@@ -82,7 +83,6 @@ loader.load('scene.gltf', (gltf) => {
 }, ( xhr ) => {
   document.getElementById('progress').innerHTML = `LOADING ${Math.max(xhr.loaded / xhr.total, 1) * 100}/100`;
 },);
-
 window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
@@ -90,24 +90,10 @@ window.addEventListener('resize', () => {
 });
 
 
+
 function animate() {
   requestAnimationFrame(animate);
   controls.update();
-  function animate(time) {
-    time *= 0.001;  // seconds
-  
-    resizeCanvasToDisplaySize();
-  
-    mesh.rotation.x = time * 0.5;
-    mesh.rotation.y = time * 1;
-  
-    renderer.render(scene, camera);
-    requestAnimationFrame(animate);
-  }
-  
-  requestAnimationFrame(animate);
   renderer.render(scene, camera);
 }
-
-
 animate();
