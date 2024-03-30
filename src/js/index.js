@@ -72,7 +72,6 @@ loader.load('scene.gltf', (gltf) => {
   mesh.position.set(3, 0, -1.5);
   scene.add(mesh);
 
-  document.getElementById('progress-container').style.display = 'none';
 }, ( xhr ) => {
   document.getElementById('progress').innerHTML = `LOADING ${Math.max(xhr.loaded / xhr.total, 1) * 100}/100`;
 },);
