@@ -1,14 +1,14 @@
-
+ul{
+  text-decoration: none;
+}
   
 #container3D canvas {
   width: 100vw !important;
   
-  min-height: 100vh;
+  min-height: 10vw;
   position: absolute;
   top: 0;
   left: 0;
-  touch-action: auto !important
-  
 }
 
 body {
@@ -22,6 +22,7 @@ position: relative;
   background-color: black;
   
   overflow: hidden;
+  text-decoration: none;
 }
 
 Roc Grotesk ExtraWide {
@@ -80,7 +81,7 @@ code {
 
 .logo {
   width: 49px;
-  padding: 40px;
+  padding: 3vh;
   font-family: "roc-grotesk-extrawide", sans-serif;
   font-size: 30wpx;
   line-height: 30px;
@@ -88,6 +89,7 @@ code {
 
   color: red;
   transition-duration: .5s;
+  position: absolute;
 }
 
 .logo a {
@@ -162,6 +164,7 @@ code {
   .stagePerspective {
     position: absolute;
     width: 100%;
+    margin-top: 150px;
   }
   
 }
@@ -172,8 +175,7 @@ code {
   .stagePerspective {
     position: absolute;
     width: 100%;
-    perspective: 50vw;
-     margin-top: -200px;
+     margin-top: 50px;
      margin-bottom: 100px;
   }
 }

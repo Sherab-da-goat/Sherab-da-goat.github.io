@@ -83,7 +83,6 @@ window.addEventListener('resize', () => {
 });
 
 
-
 function animate() {
   requestAnimationFrame(animate);
   controls.update();
