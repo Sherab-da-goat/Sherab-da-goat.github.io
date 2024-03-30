@@ -19,24 +19,23 @@ const scene = new THREE.Scene();
 // There's no reason to set the aspect here because we're going
 // to set it every frame anyway so we'll set it to 2 since 2
 // is the the aspect for the canvas default size (300w/150h = 2)
-const camera = new THREE.PerspectiveCamera(70, 2, 1, 1000);
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.enablePan = false;
 controls.minDistance = 10;
 controls.maxDistance = 10;
-controls.minPolarAngle = 0.5;
+controls.minPolarAngle = 0.7;
 controls.maxPolarAngle = 1.5;
-controls.autoRotate = false;
-controls.target = new THREE.Vector3(0, 1, 0);
+controls.autoRotate = true;
 controls.update();
 
 function resizeCanvasToDisplaySize() {
   const canvas = renderer.domElement;
   // look up the size the canvas is being displayed
-  const width = canvas.clientWidth;
-  const height = canvas.clientHeight;
+  const width = 200;
+  const height = 200;
 
   // adjust displayBuffer size to match
   if (canvas.width !== width || canvas.height !== height) {
@@ -53,14 +52,8 @@ function resizeCanvasToDisplaySize() {
 
 
 var light = new THREE.PointLight(0xffffff);
-light.position.set(-100,300,100);
+light.position.set(-10,-90,-50);
 scene.add(light);
-
-//Add lights to the scene, so we can actually see the 3D model
-const topLight = new THREE.DirectionalLight(0xffffff, 17); // (color, intensity)
-topLight.position.set(500, 300, 500) //top-left-ish
-topLight.castShadow = true;
-scene.add(topLight);
 
 
 

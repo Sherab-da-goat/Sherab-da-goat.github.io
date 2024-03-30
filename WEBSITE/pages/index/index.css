@@ -1,12 +1,15 @@
 
   
 #container3D canvas {
- 
-  position: fixed;
-  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  position: absolute;
   top: 0;
-  z-index:-1;
+  left: 0;
+  touch-action: auto !important
+  
 }
+
 body {
   margin: 0;
 position: relative;
@@ -16,6 +19,8 @@ position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
+  
+  overflow-x: hidden;
 }
 
 Roc Grotesk ExtraWide {
@@ -36,7 +41,7 @@ code {
 
 .header {
   position: -webkit-sticky;
-  position: absolute;
+  position: relative;
   background-color: transparent;
   font-size: 35px;
   display: flex;
@@ -153,7 +158,7 @@ code {
   .stagePerspective {
     height: 100vh;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
   }
 }
 
@@ -172,19 +177,18 @@ code {
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  padding: 5vw 5vw calc(7.5vw + 67px) 0;
+  padding: 5vw 5vw  0;
   transform-style: preserve-3d;
   opacity: 1;
   transition: opacity 1s;
 }
 
 .projects {
-  position:relative;
+  position:absolute;
   margin:0;
-  padding-left: 0;
   list-style: none;
   text-align: center;
-  width: 95%;
+  width: 100%;
   transform-style: preserve-3d;
 }
 
