@@ -2,7 +2,8 @@
   
 #container3D canvas {
   width: 100vw !important;
-  height: 100vh !important;
+  
+  min-height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -20,7 +21,7 @@ position: relative;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
   
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 Roc Grotesk ExtraWide {
@@ -39,6 +40,11 @@ code {
   font-family: "roc-grotesk-extrawide", sans-serif;
 }
 
+.footer {
+
+  
+  margin-bottom: 0;
+}
 .header {
   position: -webkit-sticky;
   position: relative;
@@ -148,19 +154,30 @@ code {
       format("woff");
 }
 
-.stagePerspective {
-  position: relative;
-  width: 100%;
-  perspective: 100vw;
+
+/* if device has a touch screen */
+@media (any-pointer: coarse) {
+  /* do your own styles */
+
+  .stagePerspective {
+    position: absolute;
+    width: 100%;
+  }
+  
 }
 
-&:not(.isMobile) {
+/* if device has no touch screen */
+@media (any-pointer: fine) {
+  /* do your own styles */
   .stagePerspective {
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    position: absolute;
+    width: 100%;
+    perspective: 50vw;
+     margin-top: -200px;
+     margin-bottom: 100px;
   }
 }
+
 
 .stageContainer {
   position: relative;
@@ -241,15 +258,16 @@ code {
     color: #000000;
   }
 }
-
-.projects a {
+/* if device has a touch screen */
+@media (any-pointer: coarse) {
+  /* do your own styles */.projects a {
   scale: 1;
   position: relative;
   color: #ff0000;
   text-decoration: none;
   text-transform: uppercase;
  
-  font-size: 7vw;
+  font-size: 10vw;
   font-weight: 900;
   letter-spacing: 0.02em;
   line-height: 0.9em;
@@ -263,8 +281,87 @@ code {
     -webkit-text-stroke: 3px #ff0000;
     text-stroke: 3px #ff0000;
   }
+}   
 }
 
+/* if device has no touch screen */
+@media (any-pointer: fine) {
+  /* do your own styles */
+  .projects a {
+    scale: 1;
+    position: relative;
+    color: #ff0000;
+    text-decoration: none;
+    text-transform: uppercase;
+   
+    font-size: 7vw;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    line-height: 0.9em;
+    font-family: "roc-grotesk-extrawide", sans-serif;
+   
+    transition:
+      color 0.5s,
+      opacity 0.5s;
+  
+    @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
+      -webkit-text-stroke: 3px #ff0000;
+      text-stroke: 3px #ff0000;
+    }
+  }   
+}
+                                  
+/* if device has a touch screen */
+@media (any-pointer: coarse) {
+  /* do your own styles */
+  .projects a:before {
+    content: attr(data-info);
+    white-space: pre;
+    position: absolute;
+    top: 3.7em;
+    left: -250px;
+    width: 200px;
+    text-align: center;
+    font-size: 0.7vw;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1em;
+    color: #ff00bb !important;
+    pointer-events: none;
+    transition: none;
+  
+    @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
+      -webkit-text-stroke: transparent;
+      text-stroke: transparent;
+    }
+  }
+}
+
+/* if device has no touch screen */
+@media (any-pointer: fine) {
+  /* do your own styles */
+  .projects a:before {
+    content: attr(data-info);
+    white-space: pre;
+    position: absolute;
+    top: 3.7em;
+    left: -250px;
+    width: 200px;
+    text-align: center;
+    font-size: 0.7vw;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1em;
+    color: #ff00bb !important;
+    pointer-events: none;
+    transition: none;
+  
+    @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
+      -webkit-text-stroke: transparent;
+      text-stroke: transparent;
+    }
+  }
+}
 .projects a:before {
   content: attr(data-info);
   white-space: pre;
@@ -286,6 +383,37 @@ code {
     text-stroke: transparent;
   }
 }
+/* if device has a touch screen */
+@media (any-pointer: coarse) {
+ /*this is da backslashes*/
+.projects a:after {
+  content: "";
+  position: relative;
+  top: 0.23em;
+  left: -0.3em;
+  width: 2px;
+  height: 0.85em;
+  background: transparent;
+  transform: rotateZ(25deg);
+  pointer-events: none;
+}
+}
+/* if device has a touch screen */
+@media (any-pointer: coarse) {
+  /*this is da backslashes*/
+.projects a:after {
+  content: "";
+  position: relative;
+  top: 0.23em;
+  left: -0.3em;
+  width: 2px;
+  height: 0.85em;
+  background: transparent;
+  transform: rotateZ(25deg);
+  pointer-events: none;
+}
+}
+
 /*this is da backslashes*/
 .projects a:after {
   content: "";

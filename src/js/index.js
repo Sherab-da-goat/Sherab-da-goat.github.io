@@ -26,7 +26,7 @@ controls.enableDamping = true;
 controls.enablePan = false;
 controls.minDistance = 10;
 controls.maxDistance = 10;
-controls.minPolarAngle = 0.7;
+controls.minPolarAngle = 0.9;
 controls.maxPolarAngle = 1.5;
 controls.autoRotate = true;
 controls.update();
@@ -57,7 +57,7 @@ scene.add(light);
 
 
 
-const loader = new GLTFLoader().setPath('/Root/RESOURCES/3d/devil_vTWO/');
+const loader = new GLTFLoader().setPath('/src/RESOURCES/3d/devil_vTWO/');
 loader.load('scene.gltf', (gltf) => {
   const mesh = gltf.scene;
 
