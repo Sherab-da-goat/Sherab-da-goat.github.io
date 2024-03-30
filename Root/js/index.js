@@ -57,7 +57,7 @@ scene.add(light);
 
 
 
-const loader = new GLTFLoader().setPath('3d/devil_vTWO/');
+const loader = new GLTFLoader().setPath('/Root/RESOURCES/3d/devil_vTWO/');
 loader.load('scene.gltf', (gltf) => {
   const mesh = gltf.scene;
 
