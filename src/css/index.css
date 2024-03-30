@@ -4,26 +4,59 @@ ul{
   
 #container3D canvas {
   width: 100vw !important;
-  
   min-height: 10vw;
   position: absolute;
   top: 0;
   left: 0;
+  padding-bottom: 100px;
 }
 
-body {
-  margin: 0;
-position: relative;
-  font-family: "roc-grotesk-extrawide", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+
+
+/* if device has a touch screen */
+@media (any-pointer: coarse) {
+  /* do your own styles */
+  body {
+    margin: 0;
+  position: relative;
+    font-family: "roc-grotesk-extrawide", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: black;
+    
+    overflow: hidden;
+    text-decoration: none;
+  }
   
-  overflow: hidden;
-  text-decoration: none;
 }
+
+
+/* if device hasNOT NOT NOT NOTNOTO a touch screen */
+@media (any-pointer: fine) {
+  /* do your own styles */
+
+  body {
+    margin: 0;
+  position: relative;
+    font-family: "roc-grotesk-extrawide", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: black;
+    
+    overflow-X: hidden;
+    text-decoration: none;
+  }
+  
+}
+
+
+
+
+
 
 Roc Grotesk ExtraWide {
   font-family: "roc-grotesk-extrawide", sans-serif;
@@ -164,7 +197,7 @@ code {
   .stagePerspective {
     position: absolute;
     width: 100%;
-    margin-top: 150px;
+    margin-top: 110vw;
   }
   
 }
@@ -175,8 +208,9 @@ code {
   .stagePerspective {
     position: absolute;
     width: 100%;
-     margin-top: 50px;
+     margin-top: 150px;
      margin-bottom: 100px;
+     
   }
 }
 
@@ -260,9 +294,12 @@ code {
     color: #000000;
   }
 }
+
+
 /* if device has a touch screen */
 @media (any-pointer: coarse) {
-  /* do your own styles */.projects a {
+  /* do your own styles */
+  .projects a {
   scale: 1;
   position: relative;
   color: #ff0000;
@@ -296,7 +333,7 @@ code {
     text-decoration: none;
     text-transform: uppercase;
    
-    font-size: 7vw;
+    font-size: 10vw;
     font-weight: 900;
     letter-spacing: 0.02em;
     line-height: 0.9em;
@@ -364,28 +401,8 @@ code {
     }
   }
 }
-.projects a:before {
-  content: attr(data-info);
-  white-space: pre;
-  position: absolute;
-  top: 3.7em;
-  left: -250px;
-  width: 200px;
-  text-align: center;
-  font-size: 0.7vw;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1em;
-  color: #ff00bb !important;
-  pointer-events: none;
-  transition: none;
 
-  @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
-    -webkit-text-stroke: transparent;
-    text-stroke: transparent;
-  }
-}
-/* if device has a touch screen */
+/* if device NOT NOT NOT has a touch screen */
 @media (any-pointer: coarse) {
  /*this is da backslashes*/
 .projects a:after {
@@ -400,8 +417,11 @@ code {
   pointer-events: none;
 }
 }
+
+
+
 /* if device has a touch screen */
-@media (any-pointer: coarse) {
+@media (any-pointer: fine) {
   /*this is da backslashes*/
 .projects a:after {
   content: "";
@@ -416,40 +436,27 @@ code {
 }
 }
 
-/*this is da backslashes*/
-.projects a:after {
-  content: "";
-  position: relative;
-  top: 0.23em;
-  left: -0.3em;
-  width: 2px;
-  height: 0.85em;
-  background: transparent;
-  transform: rotateZ(25deg);
-  pointer-events: none;
-}
 
-@media screen and (min-width: 500px) and (max-width: 600px) {
-  .projects a {
-    font-size: 5.4vw;
-
-    @supports (
-      (-webkit-text-stroke: 2px #ff0000) or (text-stroke: 2px #ff0000)
-    ) {
-      -webkit-text-stroke-width: 2px;
-      text-stroke-width: 2px;
-    }
-  }
-
-  .projects a:after {
-    width: 2px;
-  }
-}
-
+/* if device has no touch screen */
+@media (course-pointer: coarse) {
+  /* do your own styles */
   .stage {
-    padding-top: 25vw;
+    margin-top: 10vw;
   }
+}
 
+
+/* if device has no touch screen */
+@media (any-pointer: fine) {
+  /* do your own styles */
+  .stage {
+    margin-top: 35vw;
+  }
+}
+
+
+
+  
   .projects a:before {
     top: 10px;
     font-size: 2px;
