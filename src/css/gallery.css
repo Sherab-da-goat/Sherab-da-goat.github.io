@@ -1,49 +1,203 @@
-/* again make it an actual tempoalte */
 
 
+/*new coede*/
+/* if device has a touch screen */
+@media (any-pointer: coarse) {
+  /* do your own styles */
+  
+  
+}
 
-body {
+
+/* if device hasNOT NOT NOT NOTNOTO a touch screen */
+@media (any-pointer: fine) {
+  /* do your own styles */
+
+ 
+  
+}
+
+/* if device has a touch screen */
+@media (any-pointer: coarse) {
+  /* do your own styles */
+  body {
     background-color: black;
-    background-size: cover;
-    background-attachment: fixed;
-    margin: 0;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 100;
-    min-height: 100vh;
-    position: relative;
-    transition: background-size 0.4s ease;
+    font-family: ''roc-grotesk-extrawide', monospace';
+    font-weight: 100vh;
+    height: 100%;
     color: white;
-    padding-bottom: 500px;
+    
   }
+  
+}
+
+
+/* if device hasNOT NOT NOT NOTNOTO a touch screen */
+@media (any-pointer: fine) {
+  /* do your own styles */
+
+  body {
+    background-color: black;
+    font-family: ''roc-grotesk-extrawide', monospace';
+    font-weight: 100vh;
+    height: 100%;
+    color: white;
+    display:flex;
+    
+  }
+  
+}
+
+
+header {
+ background-color: black;
+ 
+ background: inherit;
+ 
+ width:100%;
+ position:fixed;
+ z-index:10;
+ background:inherit;
+}
+  
+  footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    padding: 20px;
+    width: 100%;
+  }
+
+nav {
+  position: fixed;
+  right: 0;
+  left: 0;
+  width: 100%;
+  display: table;
+}
+
+nav a {
+  position: relative;
+  width: 33.333%;
+  display: table-cell;
+  text-align: center;
+  color: #949494;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: 0.2s ease color;
+  background-color: black;
+}
+
+nav a:before,
+nav a:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.2s ease transform;
+}
+
+nav a:before {
+  top: 0;
+  left: 10px;
+  width: 6px;
+  height: 6px;
+}
+
+nav a:after {
+  top: 5px;
+  left: 18px;
+  width: 4px;
+  height: 4px;
+}
+
+nav a:nth-child(1):before {
+  background-color: yellow;
+}
+
+nav a:nth-child(1):after {
+  background-color: red;
+}
+
+nav a:nth-child(2):before {
+  background-color: #00e2ff;
+}
+
+nav a:nth-child(2):after {
+  background-color: #89ff00;
+}
+
+nav a:nth-child(3):before {
+  background-color: purple;
+}
+
+nav a:nth-child(3):after {
+  background-color: palevioletred;
+}
+
+#indicator {
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  width: 75px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: 0.2s ease left;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a:hover:before,
+nav a:hover:after {
+  transform: scale(1);
+}
+
+nav a:nth-child(1):hover ~ #indicator {
+  
+  left:29vh;
+  background: linear-gradient(130deg, yellow, red);
+}
+
+nav a:nth-child(2):hover ~ #indicator {
+  left: 95vh;
+  background: linear-gradient(130deg, #00e2ff, #89ff00);
+}
+
+nav a:nth-child(3):hover ~ #indicator {
+  left: 161vh;
+  background: linear-gradient(130deg, purple, palevioletred);
+}
+
+
+/* new code */
+
+
+
+Roc Grotesk ExtraWide {
+  font-family: "roc-grotesk-extrawide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+Roc Grotesk ExtraWide ExtraBold {
+  font-family: "roc-grotesk-extrawide", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
   
   main h1{
   color: #ff0000;
   font-size: 85px;
-  }
-  
-  
-  div.cursors div{
-    position: absolute;
-    top: 300px;
-    left: 300px;
-    width: 15px;
-    height: 15px;
-    background-color: red;
-    border-radius: 50%;
-    z-index: 10000;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    opacity: 60%;
-  }
-  
-  header {
-    height: 178px;
-    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1)), none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-   
   }
   
   .logo-container {
@@ -56,33 +210,7 @@ body {
     padding-left: 75px;
   }
   
-  nav {
-    flex-grow: 1;
-    text-align: center;
-    
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 100;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: white;
-    margin: 0 15px;
-    font-weight: bold;
-    transition: text-decoration 0.3s;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
+   
   
   .instagram-container,
   .logo-container {
@@ -95,18 +223,7 @@ body {
     margin-right: 175px;
     margin-left: auto;
   }
-  
-  footer {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
+
   
   .subscribe-container,
   .sitemap-container,
@@ -221,7 +338,8 @@ body {
     width:100%;
     transition:800ms ease all;
   }
-  
+
+
   Roc Grotesk ExtraWide{
   font-family: "roc-grotesk-extrawide", sans-serif;
   font-weight: 400;
@@ -232,16 +350,39 @@ body {
   font-weight: 700;
   font-style: normal;}
 
+
+
+
+
+
+/*new coede*/
+/* if device has a touch screen */
+@media (any-pointer: coarse) {
+  /* do your own styles */
+  #gallery {
+    position: relative;
+    
+}
+  
+}
+
+
+/* if device hasNOT NOT NOT NOTNOTO a touch screen */
+@media (any-pointer: fine) {
+  /* do your own styles */
+
+  #gallery {
+    position: relative;
+    
+}
+  
+}
+
   /* image div locations*/
 
 
-#gallery {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-}
 .image {
-    position: absolute;
+    position: relative;
     background-size: cover;
 }
 
@@ -467,7 +608,7 @@ body {
     width: 230px;
     height: 190px;
     top: 200px;
-    left: 800px;
+    left: 10px;
 }
 
 .image:nth-child(33) {

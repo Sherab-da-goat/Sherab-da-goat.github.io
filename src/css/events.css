@@ -1,0 +1,497 @@
+p{
+    color: #fff;
+}
+
+.circle {
+    --circle-size: 30px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 1px solid red;
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+ul{
+    text-decoration: none;
+  }
+    
+  #container3D canvas {
+    width: 100vw !important;
+    min-height: 10vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-bottom: 100px;
+  }
+  
+  
+  
+  /* if device has a touch screen */
+  @media (any-pointer: coarse) {
+    /* do your own styles */
+    body {
+      margin: 0;
+    position: relative;
+      font-family: "roc-grotesk-extrawide", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: black;
+      
+      overflow: hidden;
+      text-decoration: none;
+    }
+    
+  }
+  
+  
+  /* if device hasNOT NOT NOT NOTNOTO a touch screen */
+  @media (any-pointer: fine) {
+    /* do your own styles */
+  
+    body {
+      margin: 0;
+    position: relative;
+      font-family: "roc-grotesk-extrawide", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: black;
+      
+      overflow-X: hidden;
+      text-decoration: none;
+    }
+    
+  }
+  
+  
+  
+  
+  
+  
+  Roc Grotesk ExtraWide {
+    font-family: "roc-grotesk-extrawide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  Roc Grotesk ExtraWide ExtraBold {
+    font-family: "roc-grotesk-extrawide", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  code {
+    font-family: "roc-grotesk-extrawide", sans-serif;
+  }
+  
+  .footer {
+  
+    
+    margin-bottom: 0;
+  }
+  .header {
+    position: -webkit-sticky;
+    position: relative;
+    background-color: transparent;
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    width: 100%;
+    top: 2px;
+  }
+  
+  .link-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .link-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 100px;
+  }
+  
+  .link-left ul {
+    margin-bottom: 22px;
+  }
+  
+  .header li {
+    list-style: none;
+  }
+  
+  .logo {
+    width: 49px;
+    padding: 3vh;
+    font-family: "roc-grotesk-extrawide", sans-serif;
+    font-size: 30wpx;
+    line-height: 30px;
+    -webkit-text-stroke: 2px #ff000000;
+  
+    color: red;
+    transition-duration: .5s;
+    position: absolute;
+  }
+  
+  .logo a {
+    text-decoration: none;
+    color: red;
+  }
+  
+  .logo:not(:hover) {
+    color: red;
+    transition-duration: 3s;
+  }
+  
+  .logo a {
+    transition-duration: 0.3s;
+    color: red;
+  }
+  
+  .logo a:not(:hover) {
+    color: white;
+    transition-duration: 0.3s;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: row;
+    color: red;
+  }
+  
+  .info ul li {
+    font-size: 13px;
+    color: red;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+  }
+  
+  .about-li ul {
+    margin-left: 10px;
+    color: red;
+  }
+  
+  .nav-links ul li span {
+    margin-right: 10px;
+    font-size: 10px;
+  }
+  
+  .links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: #fff;
+  }
+  
+  @font-face {
+    font-family: "roc-grotesk-extrawide", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    src:
+      local("Druk Wide Bold Bold"),
+      url(http://localhost:3000/static/media/DrukWideBold.9c08859d858bc1190755.woff)
+        format("woff");
+  }
+  
+  
+  /* if device has a touch screen */
+  @media (any-pointer: coarse) {
+    /* do your own styles */
+  
+    .stagePerspective {
+      position: absolute;
+      width: 100%;
+      margin-top: 110vw;
+    }
+    
+  }
+  
+  /* if device has no touch screen */
+  @media (any-pointer: fine) {
+    /* do your own styles */
+    .stagePerspective {
+      position: absolute;
+      width: 100%;
+       margin-top: 150px;
+       margin-bottom: 100px;
+       
+    }
+  }
+  
+  
+  .stageContainer {
+    position: relative;
+    width: 100%;
+    transform: translateZ(0);
+    transform-style: preserve-3d;
+  }
+  
+  .stage {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 5vw 5vw  0;
+    transform-style: preserve-3d;
+    opacity: 1;
+    transition: opacity 1s;
+  }
+  
+  .projects {
+    position:absolute;
+    margin:0;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    transform-style: preserve-3d;
+  }
+  
+  .projectsLi {
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: rotate3d(0, 1, 0, var(--rotateY)) translateZ(0);
+    transform-style: preserve-3d;
+  }
+  
+  .projectContainer {
+    transform-origin: center center;
+    transform-style:preserve-3d;
+    will-change: transform;
+  
+  }
+  
+  &:not(.intro) .projectsLi:hover .projectContainer,
+  &:not(.intro) .projectsLi.isHovered .projectContainer {
+    transform: rotate3d(0, 0, 0, 0deg) translateZ(0) scale(1.1, 1);
+    transition-duration: .5s;
+  }
+  
+  .projectsLi.isSelected .projectContainer,
+  .projectsLi.isSelected:hover .projectContainer {
+    transform: rotate3d(0, 1, 0, 0deg) translateZ(0) scale(1);
+  
+    @media screen and (max-width: 767px) {
+      transition:
+        transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+        opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  
+    a {
+      @supports (
+        (-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)
+      ) {
+        -webkit-text-stroke: 0px #ff0000;
+        text-stroke: 0px #ff0000;
+      }
+    }
+  }
+  
+  &:not(.intro) .projects.isHovering .projectsLi:hover a,
+  &:not(.intro) .projects.isHovering .projectsLi.isHovered a {
+    transition-duration: 0.5s;
+  
+    @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
+      color: #000000;
+    }
+  }
+  
+  
+  /* if device has a touch screen */
+  @media (any-pointer: coarse) {
+    /* do your own styles */
+    .projects a {
+    scale: 1;
+    position: relative;
+    color: #ff0000;
+    text-decoration: none;
+    text-transform: uppercase;
+   
+    font-size: 10vw;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    line-height: 0.9em;
+    font-family: "roc-grotesk-extrawide", sans-serif;
+   
+    transition:
+      color 0.5s,
+      opacity 0.5s;
+  
+    @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
+      -webkit-text-stroke: 3px #ff0000;
+      text-stroke: 3px #ff0000;
+    }
+  }   
+  }
+  
+  /* if device has no touch screen */
+  @media (any-pointer: fine) {
+    /* do your own styles */
+    .projects a {
+      scale: 1;
+      position: relative;
+      color: #ff0000;
+      text-decoration: none;
+      text-transform: uppercase;
+     
+      font-size: 10vw;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      line-height: 0.9em;
+      font-family: "roc-grotesk-extrawide", sans-serif;
+     
+      transition:
+        color 0.5s,
+        opacity 0.5s;
+    
+      @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
+        -webkit-text-stroke: 3px #ff0000;
+        text-stroke: 3px #ff0000;
+      }
+    }   
+  }
+                                    
+  /* if device has a touch screen */
+  @media (any-pointer: coarse) {
+    /* do your own styles */
+    .projects a:before {
+      content: attr(data-info);
+      white-space: pre;
+      position: absolute;
+      top: 3.7em;
+      left: -250px;
+      width: 200px;
+      text-align: center;
+      font-size: 0.7vw;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1em;
+      color: #ff00bb !important;
+      pointer-events: none;
+      transition: none;
+    
+      @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
+        -webkit-text-stroke: transparent;
+        text-stroke: transparent;
+      }
+    }
+  }
+  
+  /* if device has no touch screen */
+  @media (any-pointer: fine) {
+    /* do your own styles */
+    .projects a:before {
+      content: attr(data-info);
+      white-space: pre;
+      position: absolute;
+      top: 3.7em;
+      left: -250px;
+      width: 200px;
+      text-align: center;
+      font-size: 0.7vw;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1em;
+      color: #ff00bb !important;
+      pointer-events: none;
+      transition: none;
+    
+      @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
+        -webkit-text-stroke: transparent;
+        text-stroke: transparent;
+      }
+    }
+  }
+  
+  /* if device NOT NOT NOT has a touch screen */
+  @media (any-pointer: coarse) {
+   /*this is da backslashes*/
+  .projects a:after {
+    content: "";
+    position: relative;
+    top: 0.23em;
+    left: -0.3em;
+    width: 2px;
+    height: 0.85em;
+    background: transparent;
+    transform: rotateZ(25deg);
+    pointer-events: none;
+  }
+  }
+  
+  
+  
+  /* if device has a touch screen */
+  @media (any-pointer: fine) {
+    /*this is da backslashes*/
+  .projects a:after {
+    content: "";
+    position: relative;
+    top: 0.23em;
+    left: -0.3em;
+    width: 2px;
+    height: 0.85em;
+    background: transparent;
+    transform: rotateZ(25deg);
+    pointer-events: none;
+  }
+  }
+  
+  
+  /* if device has no touch screen */
+  @media (course-pointer: coarse) {
+    /* do your own styles */
+    .stage {
+      margin-top: 10vw;
+    }
+  }
+  
+  
+  /* if device has no touch screen */
+  @media (any-pointer: fine) {
+    /* do your own styles */
+    .stage {
+      margin-top: 35vw;
+    }
+  }
+  
+  
+  
+    
+    .projects a:before {
+      top: 10px;
+      font-size: 2px;
+    }
+  
+    .projects a:after {
+      top: 10px;
+      left: -15px;
+    }
+  
+    .projects {
+      width: 100%;
+    }
+  
+    .projects a {
+      font-size: 8vw;
+      letter-spacing: normal;
+    }
+  
+  
+  

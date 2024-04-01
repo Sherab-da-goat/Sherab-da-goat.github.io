@@ -4,261 +4,243 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="gallery.css" />
+    
     <title>CODE RED</title>
-
-    <script src="gallery.js"></script>
+<link rel="stylesheet" href="/src/css/gallery.css" />
+    <script src="/src/js/gallery.js"></script>
     <link rel="stylesheet" href="https://use.typekit.net/gxo5elj.css" />
+
+    <script type="text/javascript">
+      window.hasMobileFirstExtension = true;
+    </script>
+
+    <script
+      async
+      src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@v0.153.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@v0.153.0/examples/jsm/"
+        }
+      }
+    </script>
   </head>
 
   <body>
+   
     <header>
-      <div class="logo-container">
-        <a href="Index.html" class="home-link">
-          <img src="/RESOURCES/devil_logo_ai_.png" alt="Home" class="logo" />
-        </a>
-      </div>
-      <!-- nav bar-->
-      <nav>
-        <ul>
-          <li>
-            <a href="/WEBSITE/pages/index/Index.html" class="nav-link">Home</a>
-          </li>
-          <li>
-            <a href="/WEBSITE/pages/residents/Residents.html" class="nav-link"
-              >Resident</a
-            >
-          </li>
-          <li>
-            <a href="/WEBSITE/pages/events/Events.html" class="nav-link"
-              >Event</a
-            >
-          </li>
-          <li>
-            <a href="/WEBSITE/pages/gallery/Gallery.html" class="nav-link"
-              >Gallery</a
-            >
-          </li>
-          <li>
-            <a href="/WEBSITE/pages/tickets/Tickets.html" class="nav-link"
-              >Tickets</a
-            >
-          </li>
-        </ul>
+       <nav>
+        <a href="/src/index.html">HOME</a>
+        <a href="#">CODING</a>
+        <a href="#">GUITAR</a>
+        <div id="indicator"></div>
       </nav>
-      <div class="instagram-container">
-        <a href="https://www.instagram.com/code.__red/" class="instagram-link">
-          <img
-            src="/RESOURCES/pngwing.com.png"
-            alt="Instagram"
-            class="instagram-logo"
-          />
-        </a>
-      </div>
-    </header>
+  </header>
+  
     <!-- the good stuff-->
     <main>
       <div id="gallery">
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/DSCN0343_Original.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/DSCN0343_Original.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/DSCN0381_Original.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/DSCN0381_Original.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/DSCN0392_Original.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/DSCN0392_Original.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/DSCN0408_Original.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/DSCN0408_Original.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/DSCN0422_Original.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/DSCN0422_Original.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/DSCN0423_Original.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/DSCN0423_Original.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/DSCN0442_Original.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/DSCN0442_Original.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/DSCN0448_Original.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/DSCN0448_Original.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/DSCN0474_Original.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/DSCN0474_Original.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/DSCN0475_Original.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/DSCN0475_Original.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/DSCN0494_Original.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/DSCN0494_Original.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/DSCN0520_Original.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/DSCN0520_Original.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/DSCN0549_Original.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/DSCN0549_Original.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0050.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0050.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0067.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0067.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0141.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0141.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0183.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0183.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0193.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0193.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0233.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0233.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0239.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0239.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0322.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0322.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0365+2.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0365+2.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0373.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0373.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0506.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0506.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0520.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0520.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0521.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0521.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0523.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0523.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0535.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0535.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0543.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0543.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0554.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0554.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0578+2.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0578+2.jpg&quot;);
           "
         ></div>
         <div
           class="image"
           style="
-            background-image: url(&quot;/RESOURCES/images/IMG_0641+2.jpg&quot;);
+            background-image: url(&quot;/src/RESOURCES/images/IMG_0641+2.jpg&quot;);
           "
         ></div>
         <div
           class="image"
-          style="background-image: url(&quot;/RESOURCES/images/.jpg&quot;)"
+          style="background-image: url(&quot;/src/RESOURCES/images/.jpg&quot;)"
         ></div>
       </div>
     </main>
 
-    <footer>
+    <footer class="footer">
       <div class="subscribe-container">
         <p>Subscribe</p>
         <p class="small-text">Don't miss out</p>
@@ -270,35 +252,7 @@
 
         <button class="custom-btn btn-5"><span>Sign Up</span></button>
       </div>
-      <div class="sitemap-container">
-        <p>Sitemap</p>
-        <!-- pages -->
-        <ul>
-          <li>
-            <a href="/WEBSITE/pages/index/Index.html" class="nav-link">Home</a>
-          </li>
-          <li>
-            <a href="/WEBSITE/pages/residents/Residents.html" class="nav-link"
-              >Resident</a
-            >
-          </li>
-          <li>
-            <a href="/WEBSITE/pages/events/Events.html" class="nav-link"
-              >Event</a
-            >
-          </li>
-          <li>
-            <a href="/WEBSITE/pages/gallery/Gallery.html" class="nav-link"
-              >Gallery</a
-            >
-          </li>
-          <li>
-            <a href="/WEBSITE/pages/tickets/Tickets.html" class="nav-link"
-              >Tickets</a
-            >
-          </li>
-        </ul>
-      </div>
+     
       <div class="follow-container">
         <p>FOLLOW</p>
         <a href="https://www.instagram.com/code.__red/" class="instagram-link"
@@ -315,23 +269,5 @@
       <p class="code-red">Code Red</p>
     </footer>
 
-    <!--this is this amount of balls (lol) that trail the cursor-->
-    <div class="cursors">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <script src="/WEBSITE/pages/index/curosr.js"></script>
   </body>
 </html>
