@@ -1,35 +1,15 @@
-p{
-    color: #fff;
+
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.circle {
-    --circle-size: 30px;
-    position: fixed;
-    height: var(--circle-size);
-    width: var(--circle-size);
-    border: 1px solid red;
-    border-radius: 100%;
-    top: calc(var(--circle-size) / 2 * -1);
-    left: calc(var(--circle-size) / 2 * -1);
-    pointer-events: none;
-    z-index: 1;
-  }
 
-ul{
-    text-decoration: none;
-  }
-    
-  #container3D canvas {
-    width: 100vw !important;
-    min-height: 10vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding-bottom: 100px;
-  }
-  
-  
-  
+
   /* if device has a touch screen */
   @media (any-pointer: coarse) {
     /* do your own styles */
@@ -64,14 +44,308 @@ ul{
       -moz-osx-font-smoothing: grayscale;
       background-color: black;
       
-      overflow-X: hidden;
+      overflow: hidden;
       text-decoration: none;
     }
     
   }
+
+.overlay{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  pointer-events: none;
+}
+
+.bar{
+  width: 10vw;
+  height: 105vh;
+  background: red;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.counter{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: black;
+  padding: 0.2em 0.4em;
+  font-size: 20vw;
+  font-family: "roc-grotesk-extrawide", sans-serif;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+
+
+nav {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  position: relative;
+  display: table-cell;
+  color: #949494;
+  text-decoration: none;
+  font-family: "roc-grotesk-extrawide", sans-serif;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: 0.2s ease color;
+  background-color: black;
+}
+
+nav a:before,
+nav a:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s ease transform;
+}
+
+nav a:before {
+  top: 0;
+  left: 10px;
+  width: 6px;
+  height: 6px;
+}
+
+nav a:after {
+  top: 5px;
+  left: 18px;
+  width: 4px;
+  height: 4px;
+}
+
+nav a:nth-child(1):before {
+  background-color: yellow;
+}
+
+nav a:nth-child(1):after {
+  background-color: red;
+}
+
+nav a:nth-child(2):before {
+  background-color: #00e2ff;
+}
+
+nav a:nth-child(2):after {
+  background-color: #89ff00;
+}
+
+nav a:nth-child(3):before {
+  background-color: purple;
+}
+
+nav a:nth-child(3):after {
+  background-color: palevioletred;
+}
+
+
+nav a:nth-child(4):before {
+  background-color: orange;
+}
+
+nav a:nth-child(4):after {
+  background-color: rgb(15, 160, 192);
+}
+
+
+nav a:nth-child(5):before {
+  background-color: rgb(244, 0, 0);
+}
+
+nav a:nth-child(5):after {
+  background-color: rgb(149, 0, 255);
+}
+
+#indicator {
+  position: relative  ;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a:hover:before,
+nav a:hover:after {
+  transform: scale(1);
+}
+
+nav a:nth-child(1):hover ~ #indicator {
+  right: 82vw;
+  background: linear-gradient(130deg, yellow, red);
+}
+
+nav a:nth-child(2):hover ~ #indicator {
+  right: 70vw;
+  background: linear-gradient(130deg, #00e2ff, #89ff00);
+}
+
+nav a:nth-child(3):hover ~ #indicator {
+  right: 49vw;
+  background: linear-gradient(130deg, purple, palevioletred);
+}
+nav a:nth-child(4):hover ~ #indicator {
+  right  : 33.5vw;
+  background: linear-gradient(130deg, purple, palevioletred);
+}
+nav a:nth-child(5):hover ~ #indicator {
+  background: linear-gradient(130deg, purple, palevioletred);
+}
+
+@media (any-pointer: fine) {
+main{
+  margin-top: 10vw;
+}
+}
+
+@media (any-pointer: coarse) {
+  main{
+    margin-top: 20vw;
+  }
+  }
+
+@media (any-pointer: fine) {
+  
+.countdown_container{
+  font-size: 10vh;
+  text-decoration: none;
+  color: white;
+  color: #fff;
+  position: relative;
+  display: flex;
+  justify-content:center;
+  margin: 0vw;
+  
+}
+}
+
+
+
+@media (any-pointer: coarse) {
+  
+  .countdown_container{
+    font-size: 10vh;
+    text-decoration: none;
+    color: white;
+    color: #fff;
+    position: relative;
+    display: flex;
+    justify-content:center;
+    margin-top: 10vw;
+    
+  transition-duration: .7s;
+  position: absolute;
+    
+  }
+  }
+
   
   
+  .countdown_container a {
+    text-decoration: none;
+    color: red;
+  }
   
+  .countdown_container a{a {
+    transition-duration: 0.3s;
+    color: red;
+  }
+  }
+  
+  .countdown_container a:not(:hover) {
+    color: white;
+    transition-duration: 0.3s;
+  }
+
+.circle {
+    --circle-size: 30px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 1px solid red;
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  
+   
+  .custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #ff0000;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(192, 0, 0, 0.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+  .btn-5 {
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+  }
+  .btn-5:hover {
+    color: #ff0048;
+    background: transparent;
+     box-shadow:none;
+  }
+  .btn-5:before,
+  .btn-5:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #8a072c;
+    box-shadow:
+     -1px -1px 5px 0px #360000,
+     7px 7px 20px 0px #0003,
+     4px 4px 5px 0px #0002;
+    transition:400ms ease all;
+  }
+  .btn-5:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .btn-5:hover:before,
+  .btn-5:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+
   
   
   
@@ -93,8 +367,7 @@ ul{
   
   .footer {
   
-    
-    margin-bottom: 0;
+    padding-top: 100px;
   }
   .header {
     position: -webkit-sticky;
@@ -105,96 +378,35 @@ ul{
     flex-direction: column;
     z-index: 1;
     width: 100%;
-    top: 2px;
   }
   
-  .link-right {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
   
-  .link-left {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-right: 100px;
-  }
-  
-  .link-left ul {
-    margin-bottom: 22px;
-  }
-  
-  .header li {
-    list-style: none;
-  }
-  
+
+  /* if device has a touch screen */
+  @media (any-pointer: coarse) {
   .logo {
-    width: 49px;
-    padding: 3vh;
+    width: 100%;
     font-family: "roc-grotesk-extrawide", sans-serif;
-    font-size: 30wpx;
-    line-height: 30px;
+    line-height: 5vw;
     -webkit-text-stroke: 2px #ff000000;
-  
+  font-size: 2vw;
     color: red;
     transition-duration: .5s;
-    position: absolute;
-  }
+    position: relative;
+  }}
+
+  @media (any-pointer: fine) {
+    .logo {
+      width: 100%;
+      font-family: "roc-grotesk-extrawide", sans-serif;
+      line-height: 5vh;
+      -webkit-text-stroke: 2px #ff000000;
+    font-size: 2vw;
+      color: red;
+      transition-duration: .5s;
+      position: absolute;
+    }}
   
-  .logo a {
-    text-decoration: none;
-    color: red;
-  }
-  
-  .logo:not(:hover) {
-    color: red;
-    transition-duration: 3s;
-  }
-  
-  .logo a {
-    transition-duration: 0.3s;
-    color: red;
-  }
-  
-  .logo a:not(:hover) {
-    color: white;
-    transition-duration: 0.3s;
-  }
-  
-  .info {
-    display: flex;
-    flex-direction: row;
-    color: red;
-  }
-  
-  .info ul li {
-    font-size: 13px;
-    color: red;
-  }
-  
-  .nav-links {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-  }
-  
-  .about-li ul {
-    margin-left: 10px;
-    color: red;
-  }
-  
-  .nav-links ul li span {
-    margin-right: 10px;
-    font-size: 10px;
-  }
-  
-  .links {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    color: #fff;
-  }
   
   @font-face {
     font-family: "roc-grotesk-extrawide", sans-serif;
@@ -205,293 +417,5 @@ ul{
       url(http://localhost:3000/static/media/DrukWideBold.9c08859d858bc1190755.woff)
         format("woff");
   }
-  
-  
-  /* if device has a touch screen */
-  @media (any-pointer: coarse) {
-    /* do your own styles */
-  
-    .stagePerspective {
-      position: absolute;
-      width: 100%;
-      margin-top: 110vw;
-    }
-    
-  }
-  
-  /* if device has no touch screen */
-  @media (any-pointer: fine) {
-    /* do your own styles */
-    .stagePerspective {
-      position: absolute;
-      width: 100%;
-       margin-top: 150px;
-       margin-bottom: 100px;
-       
-    }
-  }
-  
-  
-  .stageContainer {
-    position: relative;
-    width: 100%;
-    transform: translateZ(0);
-    transform-style: preserve-3d;
-  }
-  
-  .stage {
-    position: relative;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-    padding: 5vw 5vw  0;
-    transform-style: preserve-3d;
-    opacity: 1;
-    transition: opacity 1s;
-  }
-  
-  .projects {
-    position:absolute;
-    margin:0;
-    list-style: none;
-    text-align: center;
-    width: 100%;
-    transform-style: preserve-3d;
-  }
-  
-  .projectsLi {
-    cursor: pointer;
-    -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      transform: rotate3d(0, 1, 0, var(--rotateY)) translateZ(0);
-    transform-style: preserve-3d;
-  }
-  
-  .projectContainer {
-    transform-origin: center center;
-    transform-style:preserve-3d;
-    will-change: transform;
-  
-  }
-  
-  &:not(.intro) .projectsLi:hover .projectContainer,
-  &:not(.intro) .projectsLi.isHovered .projectContainer {
-    transform: rotate3d(0, 0, 0, 0deg) translateZ(0) scale(1.1, 1);
-    transition-duration: .5s;
-  }
-  
-  .projectsLi.isSelected .projectContainer,
-  .projectsLi.isSelected:hover .projectContainer {
-    transform: rotate3d(0, 1, 0, 0deg) translateZ(0) scale(1);
-  
-    @media screen and (max-width: 767px) {
-      transition:
-        transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
-        opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
-  
-    a {
-      @supports (
-        (-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)
-      ) {
-        -webkit-text-stroke: 0px #ff0000;
-        text-stroke: 0px #ff0000;
-      }
-    }
-  }
-  
-  &:not(.intro) .projects.isHovering .projectsLi:hover a,
-  &:not(.intro) .projects.isHovering .projectsLi.isHovered a {
-    transition-duration: 0.5s;
-  
-    @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
-      color: #000000;
-    }
-  }
-  
-  
-  /* if device has a touch screen */
-  @media (any-pointer: coarse) {
-    /* do your own styles */
-    .projects a {
-    scale: 1;
-    position: relative;
-    color: #ff0000;
-    text-decoration: none;
-    text-transform: uppercase;
-   
-    font-size: 10vw;
-    font-weight: 900;
-    letter-spacing: 0.02em;
-    line-height: 0.9em;
-    font-family: "roc-grotesk-extrawide", sans-serif;
-   
-    transition:
-      color 0.5s,
-      opacity 0.5s;
-  
-    @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
-      -webkit-text-stroke: 3px #ff0000;
-      text-stroke: 3px #ff0000;
-    }
-  }   
-  }
-  
-  /* if device has no touch screen */
-  @media (any-pointer: fine) {
-    /* do your own styles */
-    .projects a {
-      scale: 1;
-      position: relative;
-      color: #ff0000;
-      text-decoration: none;
-      text-transform: uppercase;
-     
-      font-size: 10vw;
-      font-weight: 900;
-      letter-spacing: 0.02em;
-      line-height: 0.9em;
-      font-family: "roc-grotesk-extrawide", sans-serif;
-     
-      transition:
-        color 0.5s,
-        opacity 0.5s;
-    
-      @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
-        -webkit-text-stroke: 3px #ff0000;
-        text-stroke: 3px #ff0000;
-      }
-    }   
-  }
-                                    
-  /* if device has a touch screen */
-  @media (any-pointer: coarse) {
-    /* do your own styles */
-    .projects a:before {
-      content: attr(data-info);
-      white-space: pre;
-      position: absolute;
-      top: 3.7em;
-      left: -250px;
-      width: 200px;
-      text-align: center;
-      font-size: 0.7vw;
-      font-weight: 500;
-      letter-spacing: 0;
-      line-height: 1em;
-      color: #ff00bb !important;
-      pointer-events: none;
-      transition: none;
-    
-      @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
-        -webkit-text-stroke: transparent;
-        text-stroke: transparent;
-      }
-    }
-  }
-  
-  /* if device has no touch screen */
-  @media (any-pointer: fine) {
-    /* do your own styles */
-    .projects a:before {
-      content: attr(data-info);
-      white-space: pre;
-      position: absolute;
-      top: 3.7em;
-      left: -250px;
-      width: 200px;
-      text-align: center;
-      font-size: 0.7vw;
-      font-weight: 500;
-      letter-spacing: 0;
-      line-height: 1em;
-      color: #ff00bb !important;
-      pointer-events: none;
-      transition: none;
-    
-      @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
-        -webkit-text-stroke: transparent;
-        text-stroke: transparent;
-      }
-    }
-  }
-  
-  /* if device NOT NOT NOT has a touch screen */
-  @media (any-pointer: coarse) {
-   /*this is da backslashes*/
-  .projects a:after {
-    content: "";
-    position: relative;
-    top: 0.23em;
-    left: -0.3em;
-    width: 2px;
-    height: 0.85em;
-    background: transparent;
-    transform: rotateZ(25deg);
-    pointer-events: none;
-  }
-  }
-  
-  
-  
-  /* if device has a touch screen */
-  @media (any-pointer: fine) {
-    /*this is da backslashes*/
-  .projects a:after {
-    content: "";
-    position: relative;
-    top: 0.23em;
-    left: -0.3em;
-    width: 2px;
-    height: 0.85em;
-    background: transparent;
-    transform: rotateZ(25deg);
-    pointer-events: none;
-  }
-  }
-  
-  
-  /* if device has no touch screen */
-  @media (course-pointer: coarse) {
-    /* do your own styles */
-    .stage {
-      margin-top: 10vw;
-    }
-  }
-  
-  
-  /* if device has no touch screen */
-  @media (any-pointer: fine) {
-    /* do your own styles */
-    .stage {
-      margin-top: 35vw;
-    }
-  }
-  
-  
-  
-    
-    .projects a:before {
-      top: 10px;
-      font-size: 2px;
-    }
-  
-    .projects a:after {
-      top: 10px;
-      left: -15px;
-    }
-  
-    .projects {
-      width: 100%;
-    }
-  
-    .projects a {
-      font-size: 8vw;
-      letter-spacing: normal;
-    }
-  
   
   

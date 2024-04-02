@@ -1,93 +1,124 @@
 
 
-/*new coede*/
-/* if device has a touch screen */
-@media (any-pointer: coarse) {
-  /* do your own styles */
-  
-  
+
+.header {
+  position: -webkit-sticky;
+  position: relative;
+  background-color: transparent;
+  font-size: 35px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  width: 100%;
+  top: 2px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
-/* if device hasNOT NOT NOT NOTNOTO a touch screen */
-@media (any-pointer: fine) {
-  /* do your own styles */
-
- 
-  
+.circle {
+  --circle-size: 30px;
+  position: fixed;
+  height: var(--circle-size);
+  width: var(--circle-size);
+  border: 1px solid red;
+  border-radius: 100%;
+  top: calc(var(--circle-size) / 2 * -1);
+  left: calc(var(--circle-size) / 2 * -1);
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* if device has a touch screen */
-@media (any-pointer: coarse) {
-  /* do your own styles */
-  body {
-    background-color: black;
-    font-family: ''roc-grotesk-extrawide', monospace';
-    font-weight: 100vh;
-    height: 100%;
-    color: white;
+
+  /* if device has a touch screen */
+  @media (any-pointer: coarse) {
+    /* do your own styles */
+    body {
+      margin: 0;
+    position: relative;
+      font-family: "roc-grotesk-extrawide", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: black;
+      
+      text-decoration: none;
+    }
     
   }
   
-}
-
-
-/* if device hasNOT NOT NOT NOTNOTO a touch screen */
-@media (any-pointer: fine) {
-  /* do your own styles */
-
-  body {
-    background-color: black;
-    font-family: ''roc-grotesk-extrawide', monospace';
-    font-weight: 100vh;
-    height: 100%;
-    color: white;
-    display:flex;
+  
+  /* if device hasNOT NOT NOT NOTNOTO a touch screen */
+  @media (any-pointer: fine) {
+    /* do your own styles */
+  
+    body {
+      margin: 0;
+    position: relative;
+      font-family: "roc-grotesk-extrawide", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: black;
+      
+      text-decoration: none;
+    }
     
   }
-  
+
+.overlay{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  pointer-events: none;
+}
+
+.bar{
+  width: 10vw;
+  height: 105vh;
+  background: red;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.counter{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: black;
+  padding: 0.2em 0.4em;
+  font-size: 20vw;
+  font-family: "roc-grotesk-extrawide", sans-serif;
+  z-index: 1000;
+  pointer-events: none;
 }
 
 
-header {
- background-color: black;
- 
- background: inherit;
- 
- width:100%;
- position:fixed;
- z-index:10;
- background:inherit;
-}
-  
-  footer {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    padding: 20px;
-    width: 100%;
-  }
 
 nav {
-  position: fixed;
-  right: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  display: table;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav a {
   position: relative;
-  width: 33.333%;
   display: table-cell;
-  text-align: center;
   color: #949494;
   text-decoration: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "roc-grotesk-extrawide", sans-serif;
   font-weight: bold;
   padding: 10px 20px;
   transition: 0.2s ease color;
@@ -100,7 +131,7 @@ nav a:after {
   position: absolute;
   border-radius: 50%;
   transform: scale(0);
-  transition: 0.2s ease transform;
+  transition: 0.3s ease transform;
 }
 
 nav a:before {
@@ -141,15 +172,30 @@ nav a:nth-child(3):after {
   background-color: palevioletred;
 }
 
+
+nav a:nth-child(4):before {
+  background-color: orange;
+}
+
+nav a:nth-child(4):after {
+  background-color: rgb(15, 160, 192);
+}
+
+
+nav a:nth-child(5):before {
+  background-color: rgb(244, 0, 0);
+}
+
+nav a:nth-child(5):after {
+  background-color: rgb(149, 0, 255);
+}
+
 #indicator {
-  position: absolute;
-  left: 0%;
-  bottom: 0;
-  width: 75px;
-  height: 3px;
-  background-color: #fff;
+  position: relative  ;
+  width: 100%;
+  height: 4px;
   border-radius: 5px;
-  transition: 0.2s ease left;
+  transition: 0.2s ease;
 }
 
 nav a:hover {
@@ -162,26 +208,26 @@ nav a:hover:after {
 }
 
 nav a:nth-child(1):hover ~ #indicator {
-  
-  left:29vh;
+  right: 82vw;
   background: linear-gradient(130deg, yellow, red);
 }
 
 nav a:nth-child(2):hover ~ #indicator {
-  left: 95vh;
+  right: 70vw;
   background: linear-gradient(130deg, #00e2ff, #89ff00);
 }
 
 nav a:nth-child(3):hover ~ #indicator {
-  left: 161vh;
+  right: 49vw;
   background: linear-gradient(130deg, purple, palevioletred);
 }
-
-
-/* new code */
-
-
-
+nav a:nth-child(4):hover ~ #indicator {
+  right  : 33.5vw;
+  background: linear-gradient(130deg, purple, palevioletred);
+}
+nav a:nth-child(5):hover ~ #indicator {
+  background: linear-gradient(130deg, purple, palevioletred);
+}
 Roc Grotesk ExtraWide {
   font-family: "roc-grotesk-extrawide", sans-serif;
   font-weight: 400;
@@ -199,58 +245,38 @@ Roc Grotesk ExtraWide ExtraBold {
   color: #ff0000;
   font-size: 85px;
   }
+
+
+
+
+  /* if device has a touch screen */
+  @media (any-pointer: coarse) {
+    .logo {
+      width: 100%;
+      font-family: "roc-grotesk-extrawide", sans-serif;
+      line-height: 5vw;
+      -webkit-text-stroke: 2px #ff000000;
+    font-size: 2vw;
+      color: red;
+      transition-duration: .5s;
+      position: absolute;
+    }}
   
-  .logo-container {
-    position: relative;
-  }
-  
-  .logo {
-    width: 150px;
-    height: auto;
-    padding-left: 75px;
-  }
-  
-   
-  
-  .instagram-container,
-  .logo-container {
-    margin-left: 20px;
-  }
-  
-  .instagram-logo {
-    width: 30px;
-    height: auto;
-    margin-right: 175px;
-    margin-left: auto;
-  }
+    @media (any-pointer: fine) {
+      .logo {
+        width: 100%;
+        font-family: "roc-grotesk-extrawide", sans-serif;
+        line-height: 5vh;
+        -webkit-text-stroke: 2px #ff000000;
+      font-size: 2vw;
+        color: red;
+        transition-duration: .5s;
+        position: absolute;
+      }}
+    
 
   
-  .subscribe-container,
-  .sitemap-container,
-  .follow-container {
-    text-align: left;
-  }
-  
-  .small-text {
-    font-size: 14px;
-  }
-  
-  .email-input {
-    width: 200px;
-    padding: 5px;
-  }
-  
-  .sign-up-button {
-    padding: 5px 10px;
-    background-color: white;
-    color: black;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .code-red {
-    font-size: 24px;
-  }
+
   
   .content {
     padding: 20px;
@@ -280,65 +306,6 @@ Roc Grotesk ExtraWide ExtraBold {
   }
   
   
-  .custom-btn {
-    width: 130px;
-    height: 40px;
-    color: #ff0000;
-    border-radius: 5px;
-    padding: 10px 25px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-     box-shadow:inset 2px 2px 2px 0px rgba(192, 0, 0, 0.5),
-     7px 7px 20px 0px rgba(0,0,0,.1),
-     4px 4px 5px 0px rgba(0,0,0,.1);
-    outline: none;
-  }
-  .btn-5 {
-    width: 130px;
-    height: 40px;
-    line-height: 42px;
-    padding: 0;
-    border: none;
-    background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
-  }
-  .btn-5:hover {
-    color: #ff0048;
-    background: transparent;
-     box-shadow:none;
-  }
-  .btn-5:before,
-  .btn-5:after{
-    content:'';
-    position:absolute;
-    top:0;
-    right:0;
-    height:2px;
-    width:0;
-    background: #8a072c;
-    box-shadow:
-     -1px -1px 5px 0px #360000,
-     7px 7px 20px 0px #0003,
-     4px 4px 5px 0px #0002;
-    transition:400ms ease all;
-  }
-  .btn-5:after{
-    right:inherit;
-    top:inherit;
-    left:0;
-    bottom:0;
-  }
-  .btn-5:hover:before,
-  .btn-5:hover:after{
-    width:100%;
-    transition:800ms ease all;
-  }
-
 
   Roc Grotesk ExtraWide{
   font-family: "roc-grotesk-extrawide", sans-serif;
@@ -372,7 +339,9 @@ Roc Grotesk ExtraWide ExtraBold {
   /* do your own styles */
 
   #gallery {
-    position: relative;
+    position: absolute;
+    margin-top: 7vw;
+    width: 100%;
     
 }
   
