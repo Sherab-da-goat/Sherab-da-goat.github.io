@@ -37,38 +37,15 @@
 }
 
 
-.circle {
-  --circle-size: 30px;
-  position: fixed;
-  height: var(--circle-size);
-  width: var(--circle-size);
-  border: 1px solid red;
-  border-radius: 100%;
-  top: calc(var(--circle-size) / 2 * -1);
-  left: calc(var(--circle-size) / 2 * -1);
-  pointer-events: none;
-  z-index: 1;
-}
-
-
-ul{
-  text-decoration: none;
-}
-  
-#container3D canvas {
-  width: 100vw !important;
-  min-height: 10vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding-bottom: 100px;
-}
 
 
 
-/* if device has a touch screen */
+
+/* MOBILE */
 @media (any-pointer: coarse) {
-  /* do your own styles */
+  .DESKTOP{
+    display: none;
+  }
   body {
     margin: 0;
   position: relative;
@@ -84,13 +61,100 @@ ul{
 
   }
   
+ul{
+  text-decoration: none;
+}
+.logo {
+  display: flex;
+  width: 100%;
+  font-family: "roc-grotesk-extrawide", sans-serif;
+  font-size: 30wpx;
+  line-height: 30px;
+  transition-duration: .5s;
+  position: relative;
+  justify-content: center;
+  padding: 20px;
 }
 
 
-/* if device hasNOT NOT NOT NOTNOTO a touch screen */
-@media (any-pointer: fine) {
-  /* do your own styles */
 
+.logo a {
+  color: red;
+  text-decoration: none;
+  transition-duration: 0.3s;
+  @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
+    -webkit-text-stroke: 2px #ff0000;
+    text-stroke: 2px #ff0000;
+  }
+}
+
+.logo a:not(:hover) {
+  color: red;
+  transition-duration: 0.3s;
+}
+
+
+  
+#container3D canvas {
+  width: 100vw !important;
+  min-height: 10vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-bottom: 100px;
+}
+.projects {
+  width: 100%;
+  
+}
+
+.projects a {
+  font-size: 10vw;
+  letter-spacing: normal;
+  color: #ff0000;
+  text-decoration: none;
+}
+
+
+
+.projects a {
+  scale: 1;
+  position: relative;
+  color: #ff0000;
+  text-transform: uppercase;
+  font-size: 10vw;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 0.9em;
+  font-family: "roc-grotesk-extrawide", sans-serif;
+ 
+  transition:
+    color 0.5s,
+    opacity 0.5s;
+
+  @supports ((-webkit-text-stroke: 2px #ff0000) or (text-stroke: 2px #ff0000)) {
+    -webkit-text-stroke: 1px #ff0000;
+    text-stroke: 2px #ff0000;
+  }
+}
+.stagePerspective {
+  position: absolute;
+  width: 100%;
+ 
+  margin-top: 107vw;
+}
+}
+/*END OF  MOBILE */
+/*END OF  MOBILE */
+/*END OF  MOBILE */
+/*END OF  MOBILE */
+
+
+/*DESKTOP*/
+@media (any-pointer: fine) {
+  .MOBILE{
+    display: none;
+  }
   body {
     margin: 0;
   position: relative;
@@ -105,34 +169,145 @@ ul{
     text-decoration: none;
   }
   
+ul{
+  text-decoration: none;
 }
-
-
-
-
-
-
-Roc Grotesk ExtraWide {
+.logo {
+  display: flex;
+  width: 100%;
   font-family: "roc-grotesk-extrawide", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-size: 40wpx;
+  line-height: 30px;
+  -webkit-text-stroke: 2px #ffffff;
+  color: rgb(0, 0, 0);
+  transition-duration: .5s;
+  position: relative;
+  justify-content: center;
+  padding-top: 2vw;
+  margin-bottom: 5px;
+}
+.logo a {
+  
+  text-decoration: none;
+  transition-duration: 0.3s;
+  color: rgb(255, 0, 0);
+  @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
+    -webkit-text-stroke: 2px #ff0000;
+    text-stroke: 2px #ff0000;
+  }
 }
 
-Roc Grotesk ExtraWide ExtraBold {
-  font-family: "roc-grotesk-extrawide", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+.logo a:not(:hover) {
+  color: rgb(255, 0, 0);
+  transition-duration: 0.3s;
 }
 
-code {
-  font-family: "roc-grotesk-extrawide", sans-serif;
-}
-
-.footer {
 
   
-  margin-bottom: 0;
+#container3D canvas {
+  width: 100vw !important;
+  min-height: 10vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-bottom: 100px;
 }
+.circle {
+  --circle-size: 30px;
+  position: fixed;
+  height: var(--circle-size);
+  width: var(--circle-size);
+  border: 1px solid red;
+  border-radius: 100%;
+  top: calc(var(--circle-size) / 2 * -1);
+  left: calc(var(--circle-size) / 2 * -1);
+  pointer-events: none;
+  z-index: 1;
+}
+.projects {
+  width: 100%;
+}
+
+.projects a {
+  font-size: 8vw;
+  letter-spacing: normal;
+}
+
+
+.projects a {
+  scale: 1;
+  position: relative;
+  color: #ff0000;
+  text-decoration: none;
+  text-transform: uppercase;
+ 
+  font-size: 8vw;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 0.9em;
+  font-family: "roc-grotesk-extrawide", sans-serif;
+ 
+  transition:
+    color 0.5s,
+    opacity 0.5s;
+
+  @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
+    -webkit-text-stroke: 3px #ff0000;
+    text-stroke: 3px #ff0000;
+  }
+}   
+.projects a:before {
+  content: attr(data-info);
+  white-space: pre;
+  position: absolute;
+  top: 3.7em;
+  left: -250px;
+  width: 200px;
+  text-align: center;
+  font-size: 0.7vw;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  pointer-events: none;
+  transition: none;
+  
+  @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
+    -webkit-text-stroke: transparent;
+    text-stroke: transparent;
+  }
+}
+.projects a:after {
+  content: "";
+  position: relative;
+  top: 0.23em;
+  left: -0.3em;
+  width: 2px;
+  height: 0.85em;
+  background: transparent;
+  transform: rotateZ(25deg);
+  pointer-events: none;
+}
+.stage {
+  margin-top: 29vw;
+}
+.stagePerspective {
+  position: absolute;
+  width: 100%;
+  
+  margin-top: 10vw;
+   
+}
+}
+
+/*END OF DESKTOP*/
+/*END OF DESKTOP*/
+/*END OF DESKTOP*/
+/*END OF DESKTOP*/
+
+
+
+/* i think none of this stuff should be different for mobile or desktop?*/
+
 .header {
   position: -webkit-sticky;
   position: relative;
@@ -166,101 +341,31 @@ code {
   list-style: none;
 }
 
-.logo {
-  width: 49px;
-  padding: 3vh;
-  font-family: "roc-grotesk-extrawide", sans-serif;
-  font-size: 30wpx;
-  line-height: 30px;
-  -webkit-text-stroke: 2px #ff000000;
 
-  color: red;
-  transition-duration: .5s;
-  position: absolute;
+.logo img{
+position: absolute;
+margin-left:  320px;
+margin-top: 2px;
 }
 
+
 .logo a {
+  
   text-decoration: none;
-  color: red;
-}
-
-
-.logo a {
   transition-duration: 0.3s;
-  color: red;
+  color: rgba(255, 0, 0, 0);
+  @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
+    -webkit-text-stroke: 2px #ff0000;
+    text-stroke: 2px #ff0000;
+  }
 }
 
 .logo a:not(:hover) {
-  color: white;
+  color: red;
   transition-duration: 0.3s;
 }
 
-.info {
-  display: flex;
-  flex-direction: row;
-  color: red;
-}
 
-.info ul li {
-  font-size: 13px;
-  color: red;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: space-between;
-  font-size: 13px;
-}
-
-.about-li ul {
-  margin-left: 10px;
-  color: red;
-}
-
-.nav-links ul li span {
-  margin-right: 10px;
-  font-size: 10px;
-}
-
-.links {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  color: #fff;
-}
-
-@font-face {
-  font-family: "roc-grotesk-extrawide", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  src:
-    local("Druk Wide Bold Bold"),
-    url(http://localhost:3000/static/media/DrukWideBold.9c08859d858bc1190755.woff)
-      format("woff");
-}
-
-
-/* if device has a touch screen */
-@media (any-pointer: coarse) {
-  /* do your own styles */
-
-  .stagePerspective {
-    position: absolute;
-    width: 100%;
-    margin-top: 110vw;
-  }
-  
-}
-
-/* if device has no touch screen */
-@media (any-pointer: fine) {
-  /* do your own styles */
-  .stagePerspective {
-    position: absolute;
-    width: 100%;
-     
-  }
-}
 
 
 .stageContainer {
@@ -286,7 +391,7 @@ code {
   text-align: center;
   width: 100%;
   transform-style: preserve-3d;
-  padding-top:15vh ;
+  padding-top:20vh ;
 }
 
 .projectsLi {
@@ -335,189 +440,41 @@ code {
   transition-duration: 0.5s;
 
   @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
-    color: #000000;
+    color: #ff000000;
   }
 }
 
 
-/* if device has a touch screen */
-@media (any-pointer: coarse) {
-  /* do your own styles */
-  .projects a {
-  scale: 1;
-  position: relative;
-  color: #ff0000;
-  text-decoration: none;
-  text-transform: uppercase;
- 
-  font-size: 10vw;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-  line-height: 0.9em;
+@font-face {
   font-family: "roc-grotesk-extrawide", sans-serif;
- 
-  transition:
-    color 0.5s,
-    opacity 0.5s;
-
-  @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
-    -webkit-text-stroke: 3px #ff0000;
-    text-stroke: 3px #ff0000;
-  }
-}   
-}
-
-/* if device has no touch screen */
-@media (any-pointer: fine) {
-  /* do your own styles */
-  .projects a {
-    scale: 1;
-    position: relative;
-    color: #ff0000;
-    text-decoration: none;
-    text-transform: uppercase;
-   
-    font-size: 10vw;
-    font-weight: 900;
-    letter-spacing: 0.02em;
-    line-height: 0.9em;
-    font-family: "roc-grotesk-extrawide", sans-serif;
-   
-    transition:
-      color 0.5s,
-      opacity 0.5s;
-  
-    @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
-      -webkit-text-stroke: 3px #ff0000;
-      text-stroke: 3px #ff0000;
-    }
-  }   
-}
-                                  
-/* if device has a touch screen */
-@media (any-pointer: coarse) {
-  /* do your own styles */
-  .projects a:before {
-    content: attr(data-info);
-    white-space: pre;
-    position: absolute;
-    top: 3.7em;
-    left: -250px;
-    width: 200px;
-    text-align: center;
-    font-size: 0.7vw;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 1em;
-    color: #ff00bb !important;
-    pointer-events: none;
-    transition: none;
-  
-    @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
-      -webkit-text-stroke: transparent;
-      text-stroke: transparent;
-    }
-  }
-}
-
-/* if device has no touch screen */
-@media (any-pointer: fine) {
-  /* do your own styles */
-  .projects a:before {
-    content: attr(data-info);
-    white-space: pre;
-    position: absolute;
-    top: 3.7em;
-    left: -250px;
-    width: 200px;
-    text-align: center;
-    font-size: 0.7vw;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 1em;
-    color: #ff00bb !important;
-    pointer-events: none;
-    transition: none;
-  
-    @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
-      -webkit-text-stroke: transparent;
-      text-stroke: transparent;
-    }
-  }
-}
-
-/* if device NOT NOT NOT has a touch screen */
-@media (any-pointer: coarse) {
- /*this is da backslashes*/
-.projects a:after {
-  content: "";
-  position: relative;
-  top: 0.23em;
-  left: -0.3em;
-  width: 2px;
-  height: 0.85em;
-  background: transparent;
-  transform: rotateZ(25deg);
-  pointer-events: none;
-}
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local("Druk Wide Bold Bold"),
+    url(http://localhost:3000/static/media/DrukWideBold.9c08859d858bc1190755.woff)
+      format("woff");
 }
 
 
 
-/* if device has a touch screen */
-@media (any-pointer: fine) {
-  /*this is da backslashes*/
-.projects a:after {
-  content: "";
-  position: relative;
-  top: 0.23em;
-  left: -0.3em;
-  width: 2px;
-  height: 0.85em;
-  background: transparent;
-  transform: rotateZ(25deg);
-  pointer-events: none;
-}
+/*this stuff aint not changin*/
+Roc Grotesk ExtraWide {
+  font-family: "roc-grotesk-extrawide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-
-/* if device has no touch screen */
-@media (course-pointer: coarse) {
-  /* do your own styles */
-  .stage {
-    margin-top: 10vw;
-  }
+Roc Grotesk ExtraWide ExtraBold {
+  font-family: "roc-grotesk-extrawide", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
-
-/* if device has no touch screen */
-@media (any-pointer: fine) {
-  /* do your own styles */
-  .stage {
-    margin-top: 35vw;
-  }
+code {
+  font-family: "roc-grotesk-extrawide", sans-serif;
 }
-
-
 
   
-  .projects a:before {
-    top: 10px;
-    font-size: 2px;
-  }
-
-  .projects a:after {
-    top: 10px;
-    left: -15px;
-  }
-
-  .projects {
-    width: 100%;
-  }
-
-  .projects a {
-    font-size: 8vw;
-    letter-spacing: normal;
-  }
+  
 
 

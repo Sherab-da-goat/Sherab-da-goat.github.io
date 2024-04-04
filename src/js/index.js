@@ -52,8 +52,13 @@ function resizeCanvasToDisplaySize() {
 
 
 var light = new THREE.PointLight(0xffffff, 10);
-light.position.set(-10,-90,-50);
+light.position.set(-10,-90,-100);
 scene.add(light);
+
+
+var light2 = new THREE.PointLight(0xffffff, 10);
+light2.position.set(-10, -90,100);
+scene.add(light2);
 
 
 

@@ -13,7 +13,6 @@
   </head>
 
   <body>
-   <h1 class="counter">0</h1>
 
    <div class="overlay">
     <div class="bar"></div>
@@ -30,9 +29,11 @@
 
 
    <div class="container">
+   <div class="DESKTOP">
     <header> 
        <nav>
     
+   <h1 class="counter">0</h1>
         <div class="logo">
         <a target="”_blank”" href="https://www.instagram.com/code.__red/" >CODE RED</a>
         <a href="/src/index.html">HOME</a>
@@ -42,7 +43,43 @@
         <div id="indicator"></div>
       </nav>
   </header>
+</div>
+<div class="MOBILE">
+
   
+<!--    Made by Erik Terwan    -->
+<!--   24th of November 2015   -->
+<!--        MIT License        -->
+<nav role="navigation">
+  <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" />
+    
+    <!--
+    Some spans to act as a hamburger.
+    
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <ul id="menu">
+      <a href="/src/index.html"><li>HOME</li></a>
+      <a href="/src/pages/Residents.html"><li>RESIDENTS</li></a>
+      <a href="/src/pages/events.html"><li>EVENTS</li></a>
+    </ul>
+  </div>
+</nav>
+</div>
     <!-- the good stuff-->
     <main>
       <div id="gallery">
@@ -277,16 +314,16 @@
  
 
 
- gsap.to(".counter", 0.25,{
-      delay:1.5, 
+ gsap.to(".counter", 0.15,{
+      delay:.5, 
       opacity: 0,
     });
 
-    gsap.to(".bar", 1.5,{
-      delay: 1.5,
+    gsap.to(".bar", .55,{
+      delay: .5,
       height: 0,
       stagger: {
-        amount: 0.5,
+        amount: 0.25,
       },
       ease: "power4.inOut",
     });

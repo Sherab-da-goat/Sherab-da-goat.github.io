@@ -17,7 +17,6 @@
   </head>
 
   <body > 
-    <h1 class="counter">0</h1>
 
     <div class="overlay">
      <div class="bar"></div>
@@ -33,48 +32,101 @@
     </div>
 
     <div class="container">
-
-      <header> 
+      <!--WATCH OUT FOR THESE DESKTOP AND MOBILE DIVS THERE IS DEFINETLY
+      A BETTER WATY TO DO THIS BUT I AM NOT SMART ENOUGH TO FIOGURE OUT HOW-->
+<div class="DESKTOP">
+  <header> 
+    <h1 class="counter">0</h1>
         <nav>
-         
-         <div class="logo" style="position: absolute; margin-left: 125px; margin-top: 29px;">
-           <img src="/src/RESOURCES/instagram-white-icon (1).svg" alt="Instagram" width="20px">
-         </div>
- 
-         <div class="logo">
-         <a target="”_blank”" href="https://www.instagram.com/code.__red/">CODE RED</a>
-         <a href="/src/index.html">HOME</a>
-         <a href="/src/pages/Residents.html">RESIDENTS</a>
-         <a href="/src/pages/events.html">EVENTS</a>
-         <a href="/src/pages/Gallery.html">GALLERY</a>
-         <div id="indicator"></div>
-       </nav>
-   </header>
+     
 
+     <div class="logo">
+     <a target="”_blank”" href="https://www.instagram.com/code.__red/">CODE RED</a>
+     <a href="/src/index.html">HOME</a>
+     <a href="/src/pages/Residents.html">RESIDENTS</a>
+     <a href="/src/pages/events.html">EVENTS</a>
+     <a href="/src/pages/Gallery.html">GALLERY</a>
+     <div id="indicator"></div>
+   </nav>
+</header>
+</div>
+<main>
+
+     <div class="countdown_container">
+      <a 
+      href="https://ra.co/events/1703373" target="_blank" style="text-decoration: none;"> 
+      <p id="countdown" class="countdown">
+      </p>
+    </a>
+  </div>
+  <div class="DESKTOP">
+
+    <p class="prompt">
+      Dont miss out.
+    </p>
+    <p class="prompt" style="font-size: 1vw;">(Click the countdown)</p>
+
+
+  </div>
+
+
+</main>
+
+<div class="MOBILE">
+<!--    Made by Erik Terwan    -->
+<!--   24th of November 2015   -->
+<!--        MIT License        -->
+<nav role="navigation">
+  <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" />
+    
+    <!--
+    Some spans to act as a hamburger.
+    
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <ul id="menu">
+      <a href="/src/index.html"><li>HOME</li></a>
+      <a href="/src/pages/Residents.html"><li>RESIDENTS</li></a>
+      <a href="/src/pages/Gallery.html"><li>GALLERY</li></a>
+    </ul>
+  </div>
+</nav>
     <main>
    
-         <div class="countdown_container"><a 
-        href="https://www.youtube.com/watch?v=OeLQOfb6IBU" target="_blank"> 
-        <p id="countdown" class="countdown"></p>
-        </a></div>
-    
-    </main>
-    
-      <footer class="footer">
-        <div class="subscribe-container">
-          <p>Get Notified</p>
-          <p class="small-text">Don't miss out</p>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            class="email-input"
-          />
+         <div class="countdown_container">
+          <a 
+          href="https://ra.co/events/1703373" target="_blank" style="text-decoration: none; "> 
+          <p id="countdown" class="countdown">
+          </p>
+        </a>
+      </div>
   
-          <button class="custom-btn btn-5"><span>Sign Up</span></button>
-        </div>
-       
-        
-      </footer>
+
+        <p class="prompt">
+          Dont miss out.
+        </p>
+        <p class="prompt" style="font-size: 2vh;">(Click the countdown)</p>
+    
+
+      
+
+
+    </main>
+    </div>
 
     </div>
 
@@ -108,16 +160,16 @@
     }
 startLoader();
 
-    gsap.to(".counter", 0.25,{
-      delay:1.5, 
+gsap.to(".counter", 0.15,{
+      delay:.5, 
       opacity: 0,
     });
 
-    gsap.to(".bar", 1.5,{
-      delay: 1.5,
+    gsap.to(".bar", .55,{
+      delay: .5,
       height: 0,
       stagger: {
-        amount: 0.5,
+        amount: 0.25,
       },
       ease: "power4.inOut",
     });
