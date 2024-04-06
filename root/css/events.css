@@ -313,6 +313,7 @@ body {
     
 
 
+
 nav {
   position: relative;
   width: 100%;
@@ -439,6 +440,8 @@ nav a:nth-child(5):hover ~ #indicator {
   right: 1vw;
   background: linear-gradient(130deg, rgb(0, 255, 13), rgb(255, 55, 0));
 }
+
+
 
 main{
   margin-top: 10vw;
