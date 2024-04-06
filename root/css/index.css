@@ -58,8 +58,6 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: black;
-    
-    overflow: hidden;
     text-decoration: none !important; 
 
   }
@@ -92,7 +90,7 @@ ul{
 }
 
 .logo a:not(:hover) {
-  color: red;
+  color: rgb(0, 174, 255);
   transition-duration: 0.3s;
 }
 
