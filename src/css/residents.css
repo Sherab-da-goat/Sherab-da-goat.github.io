@@ -1,6 +1,8 @@
 
 
-
+html { 
+  scroll-behavior: smooth; 
+}
 
 #container {
   min-height:100%;
@@ -239,6 +241,7 @@ pointer-events: none;
  }
 }
 .card {
+
   position: relative;
   display: flex;
   align-items:center;
@@ -814,8 +817,6 @@ nav a:nth-child(5):hover ~ #indicator {
 	}
 }
  
-
-
 
 
 
