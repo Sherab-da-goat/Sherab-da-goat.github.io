@@ -502,7 +502,7 @@ main{
   font-size: 2vw;
     color: red;
     transition-duration: .5s;
-    position: absolute;
+    position: relative;
   }
 
   .circle {
