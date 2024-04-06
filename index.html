@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <div class="circle"></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="stylesheet" href="/root/css/index.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/gxo5elj.css" />
+    <title>CODERED</title>
+    <script>
+      window.hasMobileFirstExtension = true;
+    </script>
+    <script
+      async
+      src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@v0.153.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@v0.153.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script src="/root/js/cursor.js"></script>
+  </head>
+
+  <body>
+    <h1 class="counter">0</h1>
+
+   <div class="overlay">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+   </div>
+
+
+    <header >
+        <div class="header"> 
+          
+          <div class="logo" >
+            <img src="/root/RESOURCES/instagramREDDDD.svg" alt="Instagram" width="20" > 
+       <div class="MOBILE">     <a style="text-decoration: none; color: red;"
+        target="”_blank”"
+        href="https://www.instagram.com/code.__red/"
+        
+        >CODE RED</a></div>
+       <div class="DESKTOP">     <a style="text-decoration: none;"
+        target="”_blank”"
+        href="https://www.instagram.com/code.__red/"
+        
+        >CODE RED</a></div>
+       
+          </div> 
+        </div>
+      <div id="progress">
+   <script type="module" src="/root/js/index.js">
+      
+    </script>
+    
+   </div>
+     
+    </header>
+
+
+    <div id="root">
+     
+      <div class="stagePerspective">
+        <div>
+          <main class="stage">
+            <ul class="projects isHovering">
+              <li class="projectsLi" >
+                <div class="projectContainer">
+                  <a style="text-decoration: none; color: red;"
+                    href="/root/pages/Residents.html"
+                    
+                    >Residents</a
+                  >
+                </div>
+              </li>
+              <li class="projectsLi" >
+                <div class="projectContainer">
+                  <a 
+                    href="/root/pages/events.html" style="text-decoration: none; color: red;"
+                    
+                    >Events</a
+                  >
+                </div>
+              </li>
+              <li class="projectsLi" >
+                <div class="projectContainer">
+                  <a
+                    href="#" style="text-decoration: none; color: red;"
+                    
+                    >COMING SOON</a
+                  >
+                </div>
+              </li>
+         
+
+             
+            </ul>
+          </main>
+        </div>
+      </div>
+
+    </div>
+    <footer>
+       
+      
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script >
+ 
+     function startLoader() {
+       let counterElement = document.querySelector(".counter");
+       let currentValue = 0;
+ 
+       function updateCounter(){
+         if (currentValue === 100) {
+           return;
+         }
+ 
+         currentValue += Math.floor(Math.random()*10) +1;
+ 
+         if (currentValue > 100) {
+           currentValue = 100;
+         }
+ 
+         counterElement.textContent = currentValue;
+ 
+         let delay = Math.floor(Math.random()*100) +25;
+         setTimeout(updateCounter, delay);
+ 
+ 
+       }
+       updateCounter();
+     }
+ startLoader();
+ 
+
+
+ gsap.to(".counter", 0.25,{
+      delay:1.5, 
+      opacity: 0,
+    });
+
+    gsap.to(".bar", 1.5,{
+      delay: 1.5,
+      height: 0,
+      stagger: {
+        amount: 0.5,
+      },
+      ease: "power4.inOut",
+    });
+    </script>
+  </body>
+</html>
