@@ -284,10 +284,10 @@ pointer-events: none;
   transition: transform calc(var(--d) * 2) var(--e);
 }
 .card:nth-child(1):before {
-  background-image: url(/src/RESOURCES/Headshots/434289163_1508441576552677_3650252024097077255_n.jpg);
+  background-image: url(/root/RESOURCES/Headshots/434289163_1508441576552677_3650252024097077255_n.jpg);
 }
 .card:nth-child(2):before {
-  background-image: url(/src/RESOURCES/Headshots/unnamed2.jpg);
+  background-image: url(/root/RESOURCES/Headshots/unnamed2.jpg);
 }
 .content {
   position: relative;
@@ -734,10 +734,10 @@ nav a:nth-child(5):hover ~ #indicator {
 	 transition: transform calc(var(--d) * 2) var(--e);
 }
  .card:nth-child(1):before {
-	 background-image: url(/src/RESOURCES/Headshots/434289163_1508441576552677_3650252024097077255_n.jpg);
+	 background-image: url(/root/RESOURCES/Headshots/434289163_1508441576552677_3650252024097077255_n.jpg);
 }
  .card:nth-child(2):before {
-	 background-image: url(/src/RESOURCES/Headshots/unnamed\ -\ Copy.jpg);
+	 background-image: url(/root/RESOURCES/Headshots/unnamed\ -\ Copy.jpg);
 }
  .content {
 	 position: relative;
