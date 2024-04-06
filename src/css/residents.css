@@ -33,7 +33,7 @@ pointer-events: none;
 
 /*there has to be a less confusing way to do this shit*/
 
-/*MOBILE*/
+/*MOBILE---------------------------------------------------------------------------------------------------------*/
 @media (any-pointer: coarse) {
   .DESKTOP{
   display: none;
@@ -47,92 +47,12 @@ pointer-events: none;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   text-decoration: none;
+  overflow-x: hidden;
   }
 
- 
 
-
-  
-  footer a{
-
-    position:absolute;
-    bottom:0;
-    width:100%;
-    text-align: center;
-  }
-  
-
-
-  /*Time to apply widths for accordian to work
-  Width of image = 640px
-  total images = 5
-  so width of hovered image = 640px
-  width of un-hovered image = 40px - you can set this to anything
-  so total container width = 640 + 40*4 = 800px;
-  default width = 800/5 = 160px;
-  */
-
-  .accordian {
-  width: 100%; height: 100%;
-
-  /*Time for some styling*/
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
-  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
-  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
-  }
-
-  /*A small hack to prevent flickering on some browsers*/
-  .accordian ul {
-  width: 2000px;
-  /*This will give ample space to the last item to move
-  instead of falling down/flickering during hovers.*/
-  }
-
-  .accordian li {
-  position: relative;
-  display: block;
-  width: 160px;
-  float: left;
-  border-left: 1px solid #888;
-  box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
-
-  /*Transitions to give animation effect*/
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  /*If you hover on the images now you should be able to 
-  see the basic accordian*/
-  }
-
-  /*Reduce with of un-hovered elements*/
-  .accordian ul:hover li {width: 40px;}
-  /*Lets apply hover effects now*/
-  /*The LI hover style should override the UL hover style*/
-  .accordian ul li:hover {width: 640px;}
-
-  .accordian li video {
-  display: block;
-  }
-
-  /*Image title styles*/
-  .video_title {
-  background: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  left: 0; bottom: 0;	
-  width: 640px;	
-
-  }
-  .video_title a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  padding: 20px;
-  font-size: 16px;
-  }
 
   
   
@@ -148,8 +68,7 @@ pointer-events: none;
  */
 
  
- #menuToggle
- {
+ #menuToggle{
    display: block;
    position: absolute;
    top: 20px;
@@ -273,6 +192,7 @@ pointer-events: none;
    transform: translate(-100%, 0);
    
    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   overflow: hidden;
  }
  
  #menu li
@@ -291,16 +211,177 @@ pointer-events: none;
 
 /*god bless Erik Terwan for saving me time*/
 
+
+
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+  
+  overflow-x: hidden;
 }
-/*END OF MOBILE*/
+
+.page-content {
+  display:block;
+  grid-gap: 1rem;
+  
+  max-width: 100vw;
+  margin: 0 auto;
+  margin-top:10vh ;
+}
+@media (min-width: 600px) {
+  .page-content {
+    grid-template-columns: repeat(2, 1fr);
+ }
+}
+@media (min-width: 800px) {
+  .page-content {
+    grid-template-columns: repeat(4, 1fr);
+ }
+}
+.card {
+  position: relative;
+  display: flex;
+  align-items:center;
+  overflow: hidden;
+  padding: 1rem;
+  width:100vw;
+  text-align: center;
+  color: rgb(255, 0, 0);
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 600px) {
+  .card {
+    height: 200vh;
+ }
+}
+.card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: 0 0;
+  transition: transform calc(var(--d) * 1.5) var(--e);
+  pointer-events: none;
+}
+.card:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.320) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.540) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.790) 100%);
+  transform: translateY(-50%);
+  transition: transform calc(var(--d) * 2) var(--e);
+}
+.card:nth-child(1):before {
+  background-image: url(/src/RESOURCES/Headshots/434289163_1508441576552677_3650252024097077255_n.jpg);
+}
+.card:nth-child(2):before {
+  background-image: url(/src/RESOURCES/Headshots/unnamed2.jpg);
+}
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+  
+}
+.content > * + * {
+  margin-top: 1rem;
+}
+.title {
+  font-size: 2.3rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.copy {
+  font-family: var(--font-serif);
+  font-size: 1.425rem;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.35;
+}
+.btn {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+}
+.btn:hover {
+  background-color: #0d0d0d;
+}
+.btn:focus {
+  outline: 1px dashed rgb(255, 0, 0);
+  outline-offset: 3px;
+}
+@media (hover: hover) and (min-width: 600px) {
+  .card:after {
+    transform: translateY(0);
+ }
+  .content {
+    transform: translateY(calc(100% - 4.5rem));
+ }
+  .content > *:not(.title) {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+ }
+  .card:hover, .card:focus-within {
+    align-items: center;
+ }
+  .card:hover:before, .card:focus-within:before {
+    transform: translateY(-4%);
+ }
+  .card:hover:after, .card:focus-within:after {
+    transform: translateY(-50%);
+ }
+  .card:hover .content, .card:focus-within .content {
+    transform: translateY(0);
+ }
+  .card:hover .content > *:not(.title), .card:focus-within .content > *:not(.title) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--d) / 8);
+ }
+  .card:focus-within:before, .card:focus-within:after, .card:focus-within .content, .card:focus-within .content > *:not(.title) {
+    transition-duration: 0s;
+ }
+}
+
+header{
+  position: absolute;
+  margin-left: 15vw;
+  margin-top:2px;
+}
+
+}
+/*END OF MOBILE--------------------------------------------------------------------------------*/
 
 
 
-/*DESKTOP*/
+/*DESKTOP--------------------------------------------------------------------------------------*/
 @media (any-pointer: fine) {
 
   .MOBILE{
   display: none;
+  
   }
 
   body {
@@ -313,7 +394,10 @@ pointer-events: none;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
   text-decoration: none;
+  overflow-x: hidden;
   }
+
+    
 
   .logo {
   width: 100%;
@@ -323,16 +407,15 @@ pointer-events: none;
   font-size: 2vw;
   color: red;
   transition-duration: .5s;
-  position: absolute;
+  position: relative;
   }
 
   main{
   margin: 0;
   }
 
-footer{
+  footer{
   width: 100%;
-  
   margin-top: 900px;
   position: absolute;
 }
@@ -354,76 +437,7 @@ footer{
   width: 100%;
   }
 
-  /*Time to apply widths for accordian to work
-  Width of image = 640px
-  total images = 5
-  so width of hovered image = 640px
-  width of un-hovered image = 40px - you can set this to anything
-  so total container width = 640 + 40*4 = 800px;
-  default width = 800/5 = 160px;
-  */
 
-  .accordian {
-  width: 100%; height: 100%;
-
-  /*Time for some styling*/
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
-  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
-  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
-  }
-
-  /*A small hack to prevent flickering on some browsers*/
-  .accordian ul {
-  width: 2000px;
-  /*This will give ample space to the last item to move
-  instead of falling down/flickering during hovers.*/
-  }
-
-  .accordian li {
-  position: relative;
-  display: block;
-  width: 160px;
-  float: left;
-
-  border-left: 1px solid #888;
-
-  box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
-
-  /*Transitions to give animation effect*/
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  /*If you hover on the images now you should be able to 
-  see the basic accordian*/
-  }
-
-  /*Reduce with of un-hovered elements*/
-  .accordian ul:hover li {width: 40px;}
-  /*Lets apply hover effects now*/
-  /*The LI hover style should override the UL hover style*/
-  .accordian ul li:hover {width: 640px;}
-
-  .accordian li video {
-  display: block;
-  }
-
-  /*Image title styles*/
-  .video_title {
-  background: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  left: 0; bottom: 0;	
-  width: 640px;	
-
-  }
-  .video_title a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  padding: 20px;
-  font-size: 16px;
-  }
   .circle {
   --circle-size: 30px;
   position: fixed;
@@ -442,12 +456,11 @@ footer{
   color: #ff0000;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 2vw;
+  font-size: 3vw;
   font-weight: 900;
   letter-spacing: 0.02em;
   line-height: 0.9em;
   font-family: "roc-grotesk-extrawide", sans-serif;
-
   transition:
   color 0.5s,
   opacity 0.5s;
@@ -458,6 +471,8 @@ footer{
 }   
 
 .projects {
+  
+  list-style: none;
   width: 100%;
   transform-style: preserve-3d;
   margin-top:20vh ;
@@ -477,8 +492,8 @@ footer{
   transform-origin: center center;
   transform-style:preserve-3d;
   will-change: transform;
-  /*temporary border*/
-  border: 1px solid red;
+  /*temporary border
+  border: 1px solid red;*/
   width: 100%;
 
 }
@@ -646,8 +661,166 @@ nav a:nth-child(5):hover ~ #indicator {
   right: 1vw;
   background: linear-gradient(130deg, rgb(0, 255, 13), rgb(255, 55, 0));
 }
+
+
+
+ :root {
+	 --d: 700ms;
+	 --e: cubic-bezier(0.19, 1, 0.22, 1);
 }
-/*END OF DESKTOP*/
+
+ .page-content {
+	 display: grid;
+	 grid-gap: 2rem;
+	 padding: 1rem;
+   
+	 max-width: 85vw;
+	 margin: 0 auto;
+}
+ @media (min-width: 600px) {
+	 .page-content {
+		 grid-template-columns: repeat(2, 1fr);
+	}
+}
+ @media (min-width: 800px) {
+	 .page-content {
+		 grid-template-columns: repeat(4, 1fr);
+	}
+}
+ .card {
+
+	 position: relative;
+	 display: flex;
+	 align-items: flex-end;
+	 overflow: hidden;
+	 padding: 1rem;
+	 width:40vw;
+	 text-align: center;
+	 color: rgb(255, 0, 0);
+	 background-color: rgb(0, 0, 0);
+	 box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+}
+ @media (min-width: 600px) {
+	 .card {
+		 height: 100vh;
+	}
+}
+ .card:before {
+	 content: '';
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 110%;
+	 background-size: cover;
+	 background-position: 0 0;
+	 transition: transform calc(var(--d) * 1.5) var(--e);
+	 pointer-events: none;
+}
+ .card:after {
+	 content: '';
+	 display: block;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 200%;
+	 pointer-events: none;
+	 background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.320) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.540) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.790) 100%);
+	 transform: translateY(-50%);
+	 transition: transform calc(var(--d) * 2) var(--e);
+}
+ .card:nth-child(1):before {
+	 background-image: url(/src/RESOURCES/Headshots/434289163_1508441576552677_3650252024097077255_n.jpg);
+}
+ .card:nth-child(2):before {
+	 background-image: url(/src/RESOURCES/Headshots/unnamed\ -\ Copy.jpg);
+}
+ .content {
+	 position: relative;
+	 display: flex;
+	 flex-direction: column;
+	 align-items: center;
+	 width: 100%;
+	 padding: 2rem;
+	 transition: transform var(--d) var(--e);
+	 z-index: 1;
+}
+ .content > * + * {
+	 margin-top: 1rem;
+}
+ .title {
+	 font-size: 2.3rem;
+	 font-weight: bold;
+	 line-height: 1.2;
+}
+ .copy {
+	 font-family: var(--font-serif);
+	 font-size: 1.425rem;
+	 font-style: italic;
+   font-weight: 800;
+	 line-height: 1.35;
+}
+ .btn {
+	 cursor: pointer;
+	 margin-top: 1.5rem;
+	 padding: 0.75rem 1.5rem;
+	 font-size: 0.65rem;
+	 font-weight: bold;
+	 letter-spacing: 0.025rem;
+	 text-transform: uppercase;
+	 color: white;
+	 background-color: black;
+	 border: none;
+}
+ .btn:hover {
+	 background-color: #0d0d0d;
+}
+ .btn:focus {
+	 outline: 1px dashed rgb(255, 0, 0);
+	 outline-offset: 3px;
+}
+ @media (hover: hover) and (min-width: 600px) {
+	 .card:after {
+		 transform: translateY(0);
+	}
+	 .content {
+		 transform: translateY(calc(100% - 4.5rem));
+	}
+	 .content > *:not(.title) {
+		 opacity: 0;
+		 transform: translateY(1rem);
+		 transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+	}
+	 .card:hover, .card:focus-within {
+		 align-items: center;
+	}
+	 .card:hover:before, .card:focus-within:before {
+		 transform: translateY(-4%);
+	}
+	 .card:hover:after, .card:focus-within:after {
+		 transform: translateY(-50%);
+	}
+	 .card:hover .content, .card:focus-within .content {
+		 transform: translateY(0);
+	}
+	 .card:hover .content > *:not(.title), .card:focus-within .content > *:not(.title) {
+		 opacity: 1;
+		 transform: translateY(0);
+		 transition-delay: calc(var(--d) / 8);
+	}
+	 .card:focus-within:before, .card:focus-within:after, .card:focus-within .content, .card:focus-within .content > *:not(.title) {
+		 transition-duration: 0s;
+	}
+}
+ 
+
+
+
+
+
+}
+/*END OF DESKTOP----------------------------------------------------------------------------------------------------------------------*/
 
 .counter{
 position: absolute;
