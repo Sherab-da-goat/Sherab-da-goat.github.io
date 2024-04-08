@@ -2,23 +2,26 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }  
 html { 
   scroll-behavior: smooth; 
 }
 .overlay{
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   pointer-events: none;
 }
 
 .bar{
-  width: 10%;
-  height: 105%;
+  width: 10vw;
+  height: 105vh;
   background: red;
   z-index: 1;
   pointer-events: none;
@@ -28,9 +31,15 @@ html {
   position: fixed;
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   color: black;
   padding: 0.2em 0.4em;
   font-size: 20vw;
@@ -58,6 +67,8 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: black;
+    
+    overflow: hidden;
     text-decoration: none !important; 
 
   }
@@ -66,13 +77,20 @@ ul{
   text-decoration: none;
 }
 .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   font-family: "roc-grotesk-extrawide", sans-serif;
-  font-size: 4vh;
+  font-size: 30wpx;
   line-height: 30px;
-  transition-duration: .5s;
-  justify-content: center;
+  -webkit-transition-duration: .5s;
+       -o-transition-duration: .5s;
+          transition-duration: .5s;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 20px;
 }
 
@@ -81,7 +99,9 @@ ul{
 .logo a {
   color: red;
   text-decoration: none;
-  transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
   @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
     -webkit-text-stroke: 2px #ff0000;
     text-stroke: 2px #ff0000;
@@ -89,8 +109,10 @@ ul{
 }
 
 .logo a:not(:hover) {
-  color: rgba(255, 0, 0, 0);
-  transition-duration: 0.3s;
+  color: red;
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 
@@ -109,7 +131,7 @@ ul{
 }
 
 .projects a {
-  font-size: 7vw;
+  font-size: 10vw;
   letter-spacing: normal;
   color: #ff0000;
   text-decoration: none;
@@ -122,10 +144,19 @@ ul{
   position: relative;
   color: #ff0000;
   text-transform: uppercase;
+  font-size: 10vw;
   font-weight: 900;
   letter-spacing: 0.02em;
   line-height: 0.9em;
   font-family: "roc-grotesk-extrawide", sans-serif;
+ 
+  -webkit-transition:
+    color 0.5s,
+    opacity 0.5s;
+ 
+  -o-transition:
+    color 0.5s,
+    opacity 0.5s;
  
   transition:
     color 0.5s,
@@ -140,7 +171,7 @@ ul{
   position: absolute;
   width: 100%;
  
-  margin-top: 55vh;
+  margin-top: 107vw;
 }
 }
 /*END OF  MOBILE */
@@ -172,6 +203,8 @@ ul{
   text-decoration: none;
 }
 .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   font-family: "roc-grotesk-extrawide", sans-serif;
@@ -179,26 +212,39 @@ ul{
   line-height: 30px;
   -webkit-text-stroke: 2px #ffffff;
   color: rgb(0, 0, 0);
-  transition-duration: .5s;
+  -webkit-transition-duration: .5s;
+       -o-transition-duration: .5s;
+          transition-duration: .5s;
   position: relative;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding-top: 2vw;
   margin-bottom: 5px;
 }
+
 .logo a {
-  
   text-decoration: none;
-  transition-duration: 0.3s;
-  color: rgb(255, 0, 0);
-  @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
-    -webkit-text-stroke: 2px #ff0000;
-    text-stroke: 2px #ff0000;
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  color: red; /* Start with red text color */
+}
+
+/* Disable transition for Safari */
+@media not all and (hover: none) and (pointer: coarse) {
+  .logo a {
+    -webkit-transition-duration: 0s; /* Disable transition for Safari */
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
   }
 }
 
 .logo a:not(:hover) {
-  color: rgb(255, 0, 0);
-  transition-duration: 0.3s;
+  color: red;
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 
@@ -232,44 +278,55 @@ ul{
   letter-spacing: normal;
 }
 
-
 .projects a {
+  font-size: 8vw;
+  letter-spacing: normal;
   scale: 1;
   position: relative;
-  color: #ff0000;
+  color: transparent; /* Start with transparent text */
   text-decoration: none;
   text-transform: uppercase;
- 
-  font-size: 8vw;
   font-weight: 900;
   letter-spacing: 0.02em;
   line-height: 0.9em;
   font-family: "roc-grotesk-extrawide", sans-serif;
- 
-  transition:
-    color 0.5s,
-    opacity 0.5s;
 
+  /* Apply text-stroke only if supported */
   @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
     -webkit-text-stroke: 3px #ff0000;
     text-stroke: 3px #ff0000;
   }
-}   
+
+  /* Additional declaration for all browsers */
+  -webkit-text-fill-color: #ff0000; /* Set initial text color to red */
+  -webkit-transition: -webkit-text-fill-color 0.5s; /* Transition for text color */
+  transition: -webkit-text-fill-color 0.5s; /* Transition for text color */
+  transition: color 0.5s; /* Transition for text color for non-Safari browsers */
+}
+
+.projects a:hover {
+  color: #ff0000; /* Set text color to red on hover */
+  -webkit-text-fill-color: transparent; /* Set text color to transparent on hover */
+}
+
 .projects a:before {
   content: attr(data-info);
   white-space: pre;
   position: absolute;
-  top: 3.7em;
+  top: 1em;
   left: -250px;
   width: 200px;
   text-align: center;
   font-size: 0.7vw;
   font-weight: 500;
   letter-spacing: 0;
-  line-height: 1em;
+  line-height: .2em;
   pointer-events: none;
+  -webkit-transition: none;
+  -o-transition: none;
   transition: none;
-  
+
+  /* Remove text-stroke if supported */
   @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
     -webkit-text-stroke: transparent;
     text-stroke: transparent;
@@ -283,17 +340,19 @@ ul{
   width: 2px;
   height: 0.85em;
   background: transparent;
-  transform: rotateZ(25deg);
+  -webkit-transform: rotateZ(25deg);
+      -ms-transform: rotate(25deg);
+          transform: rotateZ(25deg);
   pointer-events: none;
 }
 .stage {
-  margin-top: 29vh;
+  margin-top: 29vw;
 }
 .stagePerspective {
   position: absolute;
   width: 100%;
   
-  margin-top: 29vw;
+  margin-top: 10vw;
    
 }
 }
@@ -312,23 +371,42 @@ ul{
   position: relative;
   background-color: transparent;
   font-size: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   z-index: 1;
   width: 100%;
   top: 2px;
 }
 
 .link-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .link-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 100px;
 }
 
@@ -351,7 +429,9 @@ margin-top: 2px;
 .logo a {
   
   text-decoration: none;
-  transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
   color: rgba(255, 0, 0, 0);
   @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
     -webkit-text-stroke: 2px #ff0000;
@@ -361,7 +441,9 @@ margin-top: 2px;
 
 .logo a:not(:hover) {
   color: red;
-  transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 
@@ -370,18 +452,29 @@ margin-top: 2px;
 .stageContainer {
   position: relative;
   width: 100%;
-  transform: translateZ(0);
-  transform-style: preserve-3d;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 .stage {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   width: 100%;
-  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   opacity: 1;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
   transition: opacity 1s;
 }
 
@@ -389,7 +482,8 @@ margin-top: 2px;
   position:absolute;
   text-align: center;
   width: 100%;
-  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   padding-top:20vh ;
 }
 
@@ -397,31 +491,53 @@ margin-top: 2px;
   cursor: pointer;
   -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    transform: rotate3d(0, 1, 0, var(--rotateY)) translateZ(0);
-  transform-style: preserve-3d;
+    -webkit-transform: rotate3d(0, 1, 0, var(--rotateY)) translateZ(0);
+            transform: rotate3d(0, 1, 0, var(--rotateY)) translateZ(0);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 .projectContainer {
-  transform-origin: center center;
-  transform-style:preserve-3d;
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform-style:preserve-3d;
+          transform-style:preserve-3d;
   will-change: transform;
 
 }
 
 &:not(.intro) .projectsLi:hover .projectContainer,
 &:not(.intro) .projectsLi.isHovered .projectContainer {
-  transform: rotate3d(0, 0, 0, 0deg) translateZ(0) scale(1.1, 1);
-  transition-duration: .5s;
+  -webkit-transform: rotate3d(0, 0, 0, 0deg) translateZ(0) scale(1.1, 1);
+          transform: rotate3d(0, 0, 0, 0deg) translateZ(0) scale(1.1, 1);
+  -webkit-transition-duration: .5s;
+       -o-transition-duration: .5s;
+          transition-duration: .5s;
 }
 
 .projectsLi.isSelected .projectContainer,
 .projectsLi.isSelected:hover .projectContainer {
-  transform: rotate3d(0, 1, 0, 0deg) translateZ(0) scale(1);
+  -webkit-transform: rotate3d(0, 1, 0, 0deg) translateZ(0) scale(1);
+          transform: rotate3d(0, 1, 0, 0deg) translateZ(0) scale(1);
 
   @media screen and (max-width: 767px) {
+    -webkit-transition:
+      opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+      -webkit-transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition:
+      opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+      -webkit-transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -o-transition:
+      transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+      opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition:
       transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
       opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition:
+      transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+      opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+      -webkit-transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
   a {
@@ -436,7 +552,9 @@ margin-top: 2px;
 
 &:not(.intro) .projects.isHovering .projectsLi:hover a,
 &:not(.intro) .projects.isHovering .projectsLi.isHovered a {
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+       -o-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 
   @supports ((-webkit-text-stroke: 3px #ff0000) or (text-stroke: 3px #ff0000)) {
     color: #ff000000;
@@ -472,8 +590,3 @@ Roc Grotesk ExtraWide ExtraBold {
 code {
   font-family: "roc-grotesk-extrawide", sans-serif;
 }
-
-  
-  
-
-
