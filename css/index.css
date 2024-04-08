@@ -72,7 +72,6 @@ ul{
   font-size: 4vh;
   line-height: 30px;
   transition-duration: .5s;
-  position: relative;
   justify-content: center;
   padding: 20px;
 }
