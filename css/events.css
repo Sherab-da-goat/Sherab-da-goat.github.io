@@ -8,26 +8,22 @@ html {
 }
 
 /*The CSS for the bars and overlay*/
+
 .overlay{
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 2;
   display: flex;
   pointer-events: none;
 }
 
 .bar{
-  width: 10vw;
-  height: 105vh;
+  width: 10%;
+  height: 105%;
   background: red;
   z-index: 1;
   pointer-events: none;
-}
-
-.counter{
-  
-  position: absolute;
 }
 
 

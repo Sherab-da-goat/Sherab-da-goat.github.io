@@ -16,22 +16,24 @@ box-sizing: border-box;
 }
 
 /*The CSS for the bars and overlay*/
+
 .overlay{
-position: fixed;
-width: 100vw;
-height: 100vh;
-z-index: 2;
-display: flex;
-pointer-events: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  pointer-events: none;
 }
 
 .bar{
-width: 10vw;
-height: 105vh;
-background: red;
-z-index: 1;
-pointer-events: none;
+  width: 10%;
+  height: 105%;
+  background: red;
+  z-index: 10;
+  pointer-events: none;
 }
+
 
 /*there has to be a less confusing way to do this shit*/
 
@@ -75,7 +77,7 @@ pointer-events: none;
    position: absolute;
    top: 20px;
    left: 20px;
-   z-index: 1;
+   z-index: 3;
    
    -webkit-user-select: none;
    user-select: none;
@@ -87,6 +89,7 @@ pointer-events: none;
    color: #000000;
    
    transition: color 0.3s ease;
+   
  }
  
  #menuToggle a:hover
@@ -180,7 +183,7 @@ pointer-events: none;
  #menu
  {
    position: absolute;
-   width: 900px;
+   width: 250px;
    margin: -100px 0 0 -50px;
    padding: 50px;
    padding-top: 125px;
@@ -195,12 +198,14 @@ pointer-events: none;
    
    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
    overflow: hidden;
+   
  }
  
  #menu li
  {
    padding: 10px 0;
    font-size: 22px;
+   
  }
  
  /*
@@ -209,6 +214,7 @@ pointer-events: none;
  #menuToggle input:checked ~ ul
  {
    transform: none;
+   
  }
 
 /*god bless Erik Terwan for saving me time*/
@@ -240,6 +246,7 @@ pointer-events: none;
     grid-template-columns: repeat(4, 1fr);
  }
 }
+
 .card {
 
   position: relative;
@@ -297,7 +304,8 @@ pointer-events: none;
   width: 100%;
   padding: 2rem;
   transition: transform var(--d) var(--e);
-  z-index: 1;
+  
+  z-index: 2;
   
 }
 .content > * + * {
@@ -307,6 +315,7 @@ pointer-events: none;
   font-size: 2.3rem;
   font-weight: bold;
   line-height: 1.2;
+  
 }
 .copy {
   font-family: var(--font-serif);
