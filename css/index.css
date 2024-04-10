@@ -82,7 +82,7 @@ html {
     -moz-osx-font-smoothing: grayscale;
     background-color: black;
     
-    overflow: hidden;
+    overflow-x: hidden;
     text-decoration: none !important; 
 
   }
