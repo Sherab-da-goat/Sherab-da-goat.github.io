@@ -39,8 +39,8 @@ html {
       display: flex;
       justify-content: center;
       text-align: center;
-      font-size: 5vh;
-      margin-bottom: 15vh;
+      font-size: 3vh;
+      margin-bottom: 5vh;
     }
     
     body {
@@ -64,6 +64,7 @@ html {
   display: flex;
   justify-content:center;
   margin-top:24vh;
+  
 }
 
 
